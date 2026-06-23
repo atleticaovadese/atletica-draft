@@ -27,10 +27,11 @@ Obiettivo: tutti gli eventi del programma, anno per anno dal 2025 indietro. Stat
 
 - [x] **2025 COMPLETO** — tutti i 20 eventi (M+F), ~1850 carte → 20/20 eventi giocabili
 - [x] **2024 COMPLETO** — tutti i 20 eventi (M+F), ~1850 carte
-- [ ] 2023 — tutti i 20 eventi (prossimo)
-- [ ] 2022, 2021, … a ritroso (i dati WA sono ricchi dal ~2001, più radi prima)
+- [x] **2023 COMPLETO** — tutti i 20 eventi (M+F), ~1770 carte
+- [ ] 2022 — tutti i 20 eventi (prossimo)
+- [ ] 2021, 2020, … a ritroso (i dati WA sono ricchi dal ~2001, più radi prima)
 
-Carte totali attuali: ~3985 (set BASE 308 + shard 2025 + shard 2024). Procedura in `CLAUDE.md`.
+Carte totali attuali: ~5750 (BASE 308 + shard 2025 + 2024 + 2023). Procedura in `CLAUDE.md`.
 
 Procedura in `CLAUDE.md` → "Ingestione dati per anno".
 
