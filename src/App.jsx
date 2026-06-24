@@ -7,7 +7,7 @@ import {
   carteDraft,
   simulaEvento,
 } from './logic/gioco.js'
-import { leggiRecord, salvaRecord } from './logic/persistenza.js'
+import { leggiRecords, salvaRecords } from './logic/persistenza.js'
 import Home from './components/Home.jsx'
 import Draft from './components/Draft.jsx'
 import RisultatoEvento from './components/RisultatoEvento.jsx'
@@ -15,7 +15,8 @@ import Riepilogo from './components/Riepilogo.jsx'
 
 export default function App() {
   const [fase, setFase] = useState('home') // home | draft | risultato | riepilogo
-  const [record, setRecord] = useState(leggiRecord())
+  const [records, setRecords] = useState(leggiRecords()) // { M, F, misto }
+  const [modalita, setModalita] = useState('misto') // modalità della partita in corso
   const [nuovoRecord, setNuovoRecord] = useState(false)
 
   const [piano, setPiano] = useState([]) // [{ evento, genere }] x EVENTI_PER_PARTITA
@@ -25,11 +26,12 @@ export default function App() {
   const [risultati, setRisultati] = useState([])
   const [indiceRis, setIndiceRis] = useState(0)
 
-  function iniziaPartita(modalita) {
-    const disponibili = eventiPerModalita(modalita)
+  function iniziaPartita(mod) {
+    setModalita(mod)
+    const disponibili = eventiPerModalita(mod)
     const n = Math.min(CONFIG.EVENTI_PER_PARTITA, disponibili.length)
     const eventi = sorteggiaEventi(n, disponibili)
-    const nuovoPiano = eventi.map((ev) => ({ evento: ev, genere: generePerEvento(modalita) }))
+    const nuovoPiano = eventi.map((ev) => ({ evento: ev, genere: generePerEvento(mod) }))
     setPiano(nuovoPiano)
     setIndiceDraft(0)
     setScelte([])
@@ -54,9 +56,10 @@ export default function App() {
       setScelte(nuoveScelte)
       setRisultati(ris)
       setIndiceRis(0)
-      if (totale > record) {
-        setRecord(totale)
-        salvaRecord(totale)
+      if (totale > (records[modalita] || 0)) {
+        const nuovi = { ...records, [modalita]: totale }
+        setRecords(nuovi)
+        salvaRecords(nuovi)
         setNuovoRecord(true)
       }
       setFase('risultato')
@@ -82,7 +85,7 @@ export default function App() {
           </button>
         )}
 
-        {fase === 'home' && <Home record={record} onGioca={iniziaPartita} />}
+        {fase === 'home' && <Home records={records} onGioca={iniziaPartita} />}
 
         {fase === 'draft' && piano[indiceDraft] && (
           <Draft
@@ -108,7 +111,7 @@ export default function App() {
           <Riepilogo
             risultati={risultati}
             totale={totaleFinale}
-            record={record}
+            record={records[modalita] || 0}
             nuovoRecord={nuovoRecord}
             onRigioca={() => setFase('home')}
           />

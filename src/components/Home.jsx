@@ -1,12 +1,14 @@
 import { useState } from 'react'
 
-export default function Home({ record, onGioca }) {
+export default function Home({ records, onGioca }) {
   const [modalita, setModalita] = useState('misto')
   const opzioni = [
     { id: 'M', label: 'Uomini' },
     { id: 'F', label: 'Donne' },
     { id: 'misto', label: 'Misto' },
   ]
+  const recordModalita = records?.[modalita] ?? 0
+  const etichettaModalita = opzioni.find((o) => o.id === modalita)?.label ?? ''
 
   return (
     <div className="fade-in max-w-xl mx-auto text-center pt-10">
@@ -46,7 +48,7 @@ export default function Home({ record, onGioca }) {
       </button>
 
       <div className="mt-8 text-slate-400">
-        🏆 Record migliore: <span className="font-bold text-amber-300">{record}</span> punti
+        🏆 Record {etichettaModalita}: <span className="font-bold text-amber-300">{recordModalita}</span> punti
       </div>
     </div>
   )
