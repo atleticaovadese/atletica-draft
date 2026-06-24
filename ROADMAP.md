@@ -25,13 +25,12 @@ Claude Code. Le fasi base del brief sono completate.
 
 Obiettivo: tutti gli eventi del programma, anno per anno dal 2025 indietro. Stato:
 
-- [x] **2025 COMPLETO** — tutti i 20 eventi (M+F), ~1850 carte → 20/20 eventi giocabili
-- [x] **2024 COMPLETO** — tutti i 20 eventi (M+F), ~1850 carte
-- [x] **2023 COMPLETO** — tutti i 20 eventi (M+F), ~1770 carte
-- [ ] 2022 — tutti i 20 eventi (prossimo)
-- [ ] 2021, 2020, … a ritroso (i dati WA sono ricchi dal ~2001, più radi prima)
+- [x] **2025–2019 COMPLETI** — tutti i 20 eventi (M+F) per ogni stagione, ~1800–2000 carte/anno
+- [ ] 2018, 2017, … a ritroso (i dati WA sono ricchi dal ~2001, più radi prima)
 
-Carte totali attuali: ~5750 (BASE 308 + shard 2025 + 2024 + 2023). Procedura in `CLAUDE.md`.
+Carte totali attuali: **~13.700** (BASE 308 + shard 2025→2019). Procedura in `CLAUDE.md`.
+Suggerimento: gli anni si possono raccogliere in parallelo con sub-agenti (uno per anno),
+poi assemblare e verificare centralmente (unicità id + copertura + build).
 
 Procedura in `CLAUDE.md` → "Ingestione dati per anno".
 

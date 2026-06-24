@@ -1,0 +1,2085 @@
+// Top ~50 per atleta — stagione 2022 (fonte: World Athletics toplists, marche legali).
+import { righe } from './_parse.js'
+
+export default [
+  ...righe('100m', 'M', 2022, `
+Fred KERLEY|USA|9.76
+Trayvon BROMELL|USA|9.81
+Ferdinand OMANYALA|KEN|9.85
+Marvin BRACY-WILLIAMS|USA|9.85
+Yohan BLAKE|JAM|9.85
+Oblique SEVILLE|JAM|9.86
+Micah WILLIAMS|USA|9.86
+Christian COLEMAN|USA|9.87
+Benjamin AZAMATI|GHA|9.90
+Elijah HALL|USA|9.90
+Letsile TEBOGO|BOT|9.91
+Reece PRESCOD|GBR|9.93
+Ackeem BLAKE|JAM|9.93
+Joseph Paul AMOAH|GHA|9.94
+Kenneth BEDNAREK|USA|9.95
+Lamont Marcell JACOBS|ITA|9.95
+Noah LYLES|USA|9.95
+Kyree KING|USA|9.96
+Yupun ABEYKOON|SRI|9.96
+Zharnel HUGHES|GBR|9.97
+Akani SIMBINE|RSA|9.97
+Matthew BOLING|USA|9.98
+Cravont CHARLESTON|USA|9.98
+Emmanuel MATADI|LBR|9.98
+Abdul Hakim SANI BROWN|JPN|9.98
+Davonte BURNETT|JAM|9.99
+Favour Oghene Tejiri ASHE|NGR|9.99
+Reynier MENA|CUB|9.99
+Méba Mickaël ZEZE|FRA|9.99
+Kendal WILLIAMS|USA|9.99
+Jerome BLAKE|CAN|10.00
+Ismael KONE|CIV|10.00
+Joseph FAHNBULLEH|LBR|10.00
+Conroy JONES|JAM|10.00
+Jelani WALKER|JAM|10.00
+Samson COLEBROOKE|BAH|10.01
+Brandon CARNES|USA|10.02
+Cejhae GREENE|ANT|10.02
+Ryuichiro SAKAI|JPN|10.02
+Arthur CISSÉ|CIV|10.02
+Bouwahjgie NKRUMIE|JAM|10.02
+Terrence JONES|BAH|10.03
+Udodi Chudi ONWUZURIKE|NGR|10.03
+Oshane BAILEY|JAM|10.03
+Jerod ELCOCK|TTO|10.03
+Josephus LYLES|USA|10.03
+Clarence MUNYAI|RSA|10.04
+Ameer WEBB|USA|10.04
+Erriyon KNIGHTON|USA|10.04
+Raymond EKEVWO|NGR|10.04
+`),
+  ...righe('100m', 'F', 2022, `
+Shelly-Ann Fraser-Pryce|JAM|10.62
+Shericka Jackson|JAM|10.71
+Marie-Josée Ta Lou|CIV|10.72
+Elaine Thompson-Herah|JAM|10.79
+Julien Alfred|LCA|10.81
+Aleia Hobbs|USA|10.81
+Melissa Jefferson|USA|10.82
+Twanisha Terry|USA|10.82
+Dina Asher-Smith|GBR|10.83
+Tamari Davis|USA|10.83
+Sha'Carri Richardson|USA|10.85
+Cambrea Sturgis|USA|10.87
+Tamara Clark|USA|10.88
+Kemba Nelson|JAM|10.88
+Mujinga Kambundji|SUI|10.89
+Abby Steiner|USA|10.90
+Daryll Neita|GBR|10.90
+Shania Collins|USA|10.92
+Favour Ofili|NGR|10.93
+Michelle-Lee Ahye|TTO|10.94
+Celera Barnes|USA|10.94
+Briana Williams|JAM|10.94
+Kevona Davis|JAM|10.95
+Marybeth Sant-Price|USA|10.95
+Javianne Oliver|USA|10.95
+Murielle Ahouré-Demps|CIV|10.95
+Tina Clayton|JAM|10.95
+Brittany Brown|USA|10.96
+Teahna Daniels|USA|10.96
+Christine Mboma|NAM|10.97
+Natalliah Whyte|JAM|10.97
+Nzubechi Grace Nwokocha|NGR|10.97
+Morolake Akinosun|USA|10.98
+Anthonique Strachan|BAH|10.98
+Rosemary Chukwuma|NGR|10.99
+Kayla White|USA|10.99
+Gina Lückenkemper|GER|10.99
+Gabrielle Thomas|USA|11.00
+Jenna Prandini|USA|11.00
+Bassant Hemida|EGY|11.02
+Mikiah Brisco|USA|11.04
+Vitoria Cristina Rosa|BRA|11.05
+Edidiong Odiong|BRN|11.05
+Ewa Swoboda|POL|11.05
+Kiara Parker|USA|11.05
+Destiny Smith-Barnett|USA|11.06
+Caira Pettway|USA|11.06
+Diana Vaisman|ISR|11.06
+Natasha Morrison|JAM|11.06
+Aminatou Seyni|NIG|11.07
+`),
+  ...righe('200m', 'M', 2022, `
+Noah LYLES|USA|19.31
+Erriyon KNIGHTON|USA|19.49
+Reynier MENA|CUB|19.63
+Michael NORMAN|USA|19.76
+Kenneth BEDNAREK|USA|19.77
+Fred KERLEY|USA|19.80
+Jereem RICHARDS|TTO|19.80
+Luxolo ADAMS|RSA|19.82
+Joseph FAHNBULLEH|LBR|19.83
+Andrew HUDSON|JAM|19.87
+Gary Noa Jerrel BIBI|MRI|19.89
+Alexander OGANDO|DOM|19.91
+Christian COLEMAN|USA|19.92
+Matthew BOLING|USA|19.92
+Josephus LYLES|USA|19.93
+Blessing Akwasi AFRIFAH|ISR|19.96
+Letsile TEBOGO|BOT|19.96
+Méba Mickaël ZEZE|FRA|19.97
+Dorian CAMEL|USA|20.00
+Kyree KING|USA|20.00
+Rai BENJAMIN|USA|20.01
+Aaron BROWN|CAN|20.02
+Jerome BLAKE|CAN|20.04
+Micah WILLIAMS|USA|20.05
+Nethaneel MITCHELL-BLAKE|GBR|20.05
+Brandon CARNES|USA|20.07
+Zharnel HUGHES|GBR|20.07
+Udodi Chudi ONWUZURIKE|NGR|20.08
+Filippo TORTU|ITA|20.10
+Renan CORREA|BRA|20.12
+Benjamin AZAMATI|GHA|20.13
+Zhenye XIE|CHN|20.13
+Isiah YOUNG|USA|20.13
+Elijah HALL|USA|20.14
+Courtney LINDSEY|USA|20.15
+Adam GEMILI|GBR|20.15
+Javonte' HARDING|USA|20.16
+Eric HARRISON JR|TTO|20.18
+Charles DOBSON|GBR|20.19
+Cravont CHARLESTON|USA|20.19
+Puripol BOONSON|THA|20.19
+Jacory PATTERSON|USA|20.20
+Devon ACHANE|USA|20.20
+Yohan BLAKE|JAM|20.20
+Ramil GULIYEV|TUR|20.21
+Yancarlos MARTÍNEZ|DOM|20.21
+Elijah MORROW|USA|20.22
+Akeem BLOOMFIELD|JAM|20.22
+Joe FERGUSON|GBR|20.23
+Randolph ROSS|USA|20.26
+`),
+  ...righe('200m', 'F', 2022, `
+Shericka Jackson|JAM|21.45
+Abby Steiner|USA|21.77
+Shelly-Ann Fraser-Pryce|JAM|21.81
+Christine Mboma|NAM|21.87
+Tamara Clark|USA|21.92
+Favour Ofili|NGR|21.96
+Dina Asher-Smith|GBR|21.96
+Elaine Thompson-Herah|JAM|21.97
+Gabrielle Thomas|USA|21.98
+Aminatou Seyni|NIG|21.98
+Brittany Brown|USA|21.99
+Jenna Prandini|USA|22.01
+Mujinga Kambundji|SUI|22.05
+Cambrea Sturgis|USA|22.11
+Kayla White|USA|22.18
+Kynnedy Flannel|USA|22.23
+Kevona Davis|JAM|22.26
+Anavia Battle|USA|22.26
+Jasmine Camacho-Quinn|PUR|22.27
+Beatrice Masilingi|NAM|22.27
+Shaunae Miller-Uibo|BAH|22.32
+Rosemary Chukwuma|NGR|22.33
+Marileidy Paulino|DOM|22.36
+Sha'Carri Richardson|USA|22.38
+A'Keyla Mitchell|USA|22.39
+Allyson Felix|USA|22.40
+TyNia Gaither|BAH|22.41
+Edidiong Odiong|BRN|22.43
+Nzubechi Grace Nwokocha|NGR|22.44
+Shania Collins|USA|22.45
+Melissa Jefferson|USA|22.46
+Julien Alfred|LCA|22.46
+Bassant Hemida|EGY|22.47
+Vitoria Cristina Rosa|BRA|22.47
+Candace Hill|USA|22.50
+Corinna Schwab|GER|22.51
+Brianna Lyston|JAM|22.53
+Anthonique Strachan|BAH|22.55
+Mariah Ayers|USA|22.55
+Laila Owens|USA|22.57
+Natalliah Whyte|JAM|22.57
+Rhasidat Adeleke|IRL|22.59
+Daryll Neita|GBR|22.61
+Tamari Davis|USA|22.62
+Marie-Josée Ta Lou|CIV|22.64
+Talitha Diggs|USA|22.64
+Yanique Dayle|JAM|22.64
+Tobi Amusan|NGR|22.66
+Joella Lloyd|ANT|22.66
+Ida Karstoft|DEN|22.67
+`),
+  ...righe('400m', 'M', 2022, `
+Michael NORMAN|USA|43.56
+Champion ALLISON|USA|43.70
+Kirani JAMES|GRN|44.02
+Randolph ROSS|USA|44.13
+Steven GARDINER|BAH|44.21
+Michael CHERRY|USA|44.28
+Wayde VAN NIEKERK|RSA|44.33
+Elija GODWIN|USA|44.34
+Matthew HUDSON-SMITH|GBR|44.35
+Vernon NORWOOD|USA|44.35
+Jonathan JONES|BAR|44.43
+Fred KERLEY|USA|44.47
+Bryce DEADMON|USA|44.47
+Alison DOS SANTOS|BRA|44.54
+Christopher TAYLOR|JAM|44.63
+Lidio Andres FELIZ|DOM|44.64
+Muzala SAMUKONGA|ZAM|44.66
+Alexander OGANDO|DOM|44.68
+Jenoah MCKIVER|USA|44.74
+Zakithi NENE|RSA|44.74
+Wilbert LONDON|USA|44.78
+Jereem RICHARDS|TTO|44.79
+Jevaughn POWELL|JAM|44.87
+Emmanuel Kipkurui KORIR|KEN|44.87
+Bayapo NDORI|BOT|44.87
+Steven MCELROY|USA|44.93
+Tyler JOHNSON|USA|44.95
+Boniface Ontuga MWERESA|KEN|44.96
+Trevor STEWART|USA|44.99
+Tyler TERRY|USA|45.00
+Ryan WILLIE|USA|45.00
+Isaac MAKWALA|BOT|45.03
+Ricky PETRUCCIANI|SUI|45.03
+Noah WILLIAMS|USA|45.04
+Nathon ALLEN|JAM|45.04
+Trevor BASSITT|USA|45.05
+Ismail TURNER|USA|45.06
+Cameron REYNOLDS|USA|45.07
+Ayden OWENS-DELERME|PUR|45.07
+Alessandro SIBILIO|ITA|45.08
+Alex HAYDOCK-WILSON|GBR|45.08
+Mazen Mawtan AL YASEN|KSA|45.08
+Luguelín SANTOS|DOM|45.09
+Charles DOBSON|GBR|45.11
+Jacory PATTERSON|USA|45.12
+Kévin BORLÉE|BEL|45.12
+Johnnie BLOCKBURGER|USA|45.14
+Ashton SCHWARTZMAN|USA|45.16
+Liemarvin BONEVACIA|NED|45.17
+Gamali FELIX|GRN|45.18
+`),
+  ...righe('400m', 'F', 2022, `
+Marileidy Paulino|DOM|48.99
+Shaunae Miller-Uibo|BAH|49.11
+Femke Bol|NED|49.44
+Sada Williams|BAR|49.75
+Fiordaliza Cofil|DOM|49.80
+Natalia Kaczmarek|POL|49.86
+Charokee Young|JAM|49.87
+Candice McLeod|JAM|49.87
+Talitha Diggs|USA|49.99
+Britton Wilson|USA|50.05
+Stephenie Ann McPherson|JAM|50.15
+Stacey Ann Williams|JAM|50.18
+Lieke Klaver|NED|50.18
+Cynthia Bolingo|BEL|50.19
+Anna Kiełbasińska|POL|50.28
+Kendall Ellis|USA|50.35
+Athing Mu|USA|50.42
+Kennedy Simon|USA|50.45
+Modesta Justė Morauskaitė|LTU|50.49
+Victoria Ohuruogu|GBR|50.50
+Rhasidat Adeleke|IRL|50.53
+Lynna Irby|USA|50.67
+Mary Moraa|KEN|50.67
+Polina Miller|ANA|50.71
+Allyson Felix|USA|50.71
+Alexis Holmes|USA|50.71
+Justyna Święty-Ersetic|POL|50.74
+Wadeline Jonathas|USA|50.84
+Tierra Robinson-Jones|USA|50.89
+Corinna Schwab|GER|50.91
+Roxana Gómez|CUB|50.93
+Junelle Bromfield|JAM|50.93
+Shae Anderson|USA|50.94
+Gabby Scott|PUR|50.97
+Yekaterina Renzhina|RUS|51.01
+Kaylin Whitney|USA|51.02
+Jaide Stepter Baynes|USA|51.05
+Rosey Effiong|USA|51.06
+Iga Baumgart-Witan|POL|51.09
+Lada Vondrová|CZE|51.13
+Kavia Francis|JAM|51.15
+Aliyah Abrams|GUY|51.17
+Nicole Yeargin|GBR|51.17
+Aishwarya Kailash Mishra|IND|51.18
+Aiyanna Stiverne|CAN|51.21
+Amandine Brossier|FRA|51.21
+Jan'Taijah Jones|USA|51.22
+Eveline Saalberg|NED|51.22
+Zoey Clark|GBR|51.22
+Alina Luchshava|BLR|51.22
+`),
+  ...righe('800m', 'M', 2022, `
+Emmanuel Kipkurui Korir|KEN|1:43.26
+Marco Arop|CAN|1:43.38
+Max Burgin|GBR|1:43.52
+Wyclife Kinyamal|KEN|1:43.54
+Jake Wightman|GBR|1:43.65
+Moad Zahafi|MAR|1:43.69
+Djamel Sedjati|ALG|1:43.69
+Benjamin Robert|FRA|1:43.75
+Peter Bol|AUS|1:44.00
+Emmanuel Wanyonyi|KEN|1:44.01
+Elias Ngeny|KEN|1:44.05
+Yassine Hethat|ALG|1:44.06
+Tony Van Diepen|NED|1:44.14
+Slimane Moula|ALG|1:44.19
+Gabriel Tual|FRA|1:44.23
+Eliott Crestan|BEL|1:44.24
+Festus Lagat|KEN|1:44.31
+Ermias Girma|ETH|1:44.36
+Collins Kipruto|KEN|1:44.42
+Mohamed Ali Gouaned|ALG|1:44.43
+Patryk Dobek|POL|1:44.49
+Kyle Langford|GBR|1:44.49
+Pierre-Ambroise Bosse|FRA|1:44.54
+Tshepo Tshite|RSA|1:44.59
+Andreas Kramer|SWE|1:44.59
+Bryce Hoppel|USA|1:44.60
+Ben Pattison|GBR|1:44.60
+Cornelius Tuwei|KEN|1:44.66
+Jesus Tonatiu López|MEX|1:44.67
+Joseph Deng|AUS|1:44.69
+Jonah Koech|USA|1:44.74
+Mark English|IRL|1:44.76
+Mateusz Borkowski|POL|1:44.79
+Neil Gourley|GBR|1:44.82
+Catalin Tecuceanu|ITA|1:44.83
+Nicholas Kiplangat Kebenei|KEN|1:44.84
+Álvaro De Arriba|ESP|1:44.85
+Mariano García|ESP|1:44.85
+Noah Kibet|KEN|1:44.89
+Jonathan Kitilit|KEN|1:44.89
+Tibo De Smet|BEL|1:44.89
+Tolesa Bodena|ETH|1:44.90
+Nijel Amos|BOT|1:44.92
+Adrián Ben|ESP|1:44.93
+Elhassane Moujahid|MAR|1:44.96
+Simone Barontini|ITA|1:44.96
+Alex Amankwa|GHA|1:44.97
+Ramzi Abdenouz|ALG|1:44.98
+Abdessalem Ayouni|TUN|1:44.99
+Navasky Anderson|JAM|1:45.02
+`),
+  ...righe('800m', 'F', 2022, `
+Athing MU|USA|1:56.30
+Keely HODGKINSON|GBR|1:56.38
+Mary MORAA|KEN|1:56.71
+Natoya GOULE|JAM|1:56.98
+Diribe WELTEJI|ETH|1:57.02
+Ajee' WILSON|USA|1:57.23
+Rénelle LAMOTE|FRA|1:57.84
+Sage HURTA|USA|1:57.85
+Laura MUIR|GBR|1:57.87
+Raevyn ROGERS|USA|1:57.96
+Olivia BAKER|USA|1:58.05
+Allie WILSON|USA|1:58.09
+Faith KIPYEGON|KEN|1:58.18
+Prudence SEKGODISO|RSA|1:58.41
+Jemma REEKIE|GBR|1:58.44
+Hirut MESHESHA|ETH|1:58.54
+Catriona BISSET|AUS|1:58.54
+Halimah NAKAAYI|UGA|1:58.58
+Rose Mary ALMANZA|CUB|1:58.60
+Nia AKINS|USA|1:58.78
+Anita HORVAT|SLO|1:58.96
+Elena BELLÒ|ITA|1:58.97
+Sofia ENNAOUI|POL|1:58.98
+Juliette WHITTAKER|USA|1:59.04
+Brooke FELDMEIER|USA|1:59.08
+Roisin WILLIS|USA|1:59.13
+Adelle TRACEY|JAM|1:59.20
+Abbey CALDWELL|AUS|1:59.31
+Freweyni HAILU|ETH|1:59.39
+Louise SHANAHAN|IRL|1:59.42
+Christina HERING|GER|1:59.51
+Chrisann GORDON-POWELL|JAM|1:59.52
+Ellie BAKER|GBR|1:59.52
+Audrey WERRO|SUI|1:59.53
+Lindsey BUTTERWORTH|CAN|1:59.59
+Agnès RAHAROLAHY|FRA|1:59.59
+Sabrina SOUTHERLAND|USA|1:59.63
+Lore HOFFMANN|SUI|1:59.65
+Madeleine KELLY|CAN|1:59.71
+Katie SNOWDEN|GBR|1:59.72
+Noélie YARIGO|BEN|1:59.75
+Alexandra BELL|GBR|1:59.76
+Cory Ann MCGEE|USA|1:59.78
+Kristie SCHOFFIELD|USA|1:59.80
+Heather MACLEAN|USA|1:59.80
+Taryn RAWLINGS|USA|1:59.83
+Jarinter Mawia MWASYA|KEN|1:59.84
+Anna WIELGOSZ|POL|1:59.84
+Ciara MAGEEAN|IRL|1:59.86
+Adrianna TOPOLNICKA|POL|1:59.86
+`),
+  ...righe('1500m', 'M', 2022, `
+Jakob Ingebrigtsen|NOR|3:29.02
+Jake Wightman|GBR|3:29.23
+Mohamed Katir|ESP|3:29.90
+Abel Kipsang|KEN|3:29.93
+Oliver Hoare|AUS|3:30.12
+Stewart McSweyn|AUS|3:30.18
+Mario García|ESP|3:30.20
+Timothy Cheruiyot|KEN|3:30.21
+Josh Kerr|GBR|3:30.60
+Jake Heyward|GBR|3:31.08
+Samuel Tanner|NZL|3:31.34
+Michał Rozmys|POL|3:32.43
+Matthew Stonier|GBR|3:32.50
+Samuel Tefera|ETH|3:32.77
+Neil Gourley|GBR|3:32.93
+Teddese Lemi|ETH|3:32.98
+Charles Grethen|LUX|3:33.16
+Yared Nuguse|USA|3:33.26
+Elliot Giles|GBR|3:33.56
+Eliud Kipsang|KEN|3:33.74
+Jonathan Davis|USA|3:33.81
+Abdellatif Sadiki|MAR|3:33.93
+William Paulson|CAN|3:33.97
+Reynold Cheruiyot|KEN|3:34.02
+Charlie Hunter|AUS|3:34.32
+Ismael Debjani|BEL|3:34.39
+Festus Lagat|KEN|3:34.65
+Ryan Mphahlele|RSA|3:34.66
+Ignacio Fontes|ESP|3:34.71
+Kumari Taki|KEN|3:34.73
+Samuel Zeleke|ETH|3:34.80
+Cooper Teare|USA|3:34.81
+Andrew Hunter|USA|3:34.86
+Samuel Prakel|USA|3:34.92
+Pietro Arese|ITA|3:35.00
+Charles Philibert-Thiboutot|CAN|3:35.02
+Azeddine Habz|FRA|3:35.05
+Vincent Ciattei|USA|3:35.07
+Robert Heppenstall|CAN|3:35.17
+Cole Hocker|USA|3:35.18
+Ruben Verheyden|BEL|3:35.19
+John Gregorek|USA|3:35.29
+Adel Mechaal|ESP|3:35.30
+George Mills|GBR|3:35.30
+Andrew Coscoran|IRL|3:35.43
+Robert Farken|GER|3:35.44
+Hicham Ouladha|MAR|3:35.48
+David Ribich|USA|3:35.51
+Grant Fisher|USA|3:35.53
+Joshua Thompson|USA|3:35.55
+`),
+  ...righe('1500m', 'F', 2022, `
+Faith Kipyegon|KEN|3:50.37
+Gudaf Tsegay|ETH|3:54.21
+Laura Muir|GBR|3:55.28
+Ciara Mageean|IRL|3:56.63
+Diribe Welteji|ETH|3:56.91
+Freweyni Hailu|ETH|3:56.94
+Hirut Meshesha|ETH|3:57.30
+Gabriela Debues-Stafford|CAN|3:58.62
+Heather MacLean|USA|3:58.76
+Axumawit Embaye|ETH|3:58.80
+Sinclaire Johnson|USA|3:58.85
+Elise Cranny|USA|3:59.06
+Jessica Hull|AUS|3:59.31
+Elle St. Pierre|USA|3:59.68
+Ayal Dagnachew|ETH|3:59.87
+Winnie Nanyondo|UGA|3:59.91
+Georgia Griffith|AUS|4:00.16
+Lemlem Hailu|ETH|4:00.32
+Cory Ann McGee|USA|4:00.34
+Linden Hall|AUS|4:00.58
+Karissa Schweizer|USA|4:00.75
+Netsanet Desta|ETH|4:00.84
+Claudia Mihaela Bobocea|ROU|4:01.10
+Sofia Ennaoui|POL|4:01.39
+Sage Hurta|USA|4:01.79
+Gaia Sabbatini|ITA|4:01.93
+Birke Haylom|ETH|4:02.25
+Adelle Tracey|JAM|4:02.36
+Habitam Alemu|ETH|4:02.50
+Edinah Jebitok|KEN|4:02.66
+Sarah Healy|IRL|4:02.86
+Eleanor Fulton|USA|4:03.03
+Eliza Megger|POL|4:03.04
+Winny Chebet|KEN|4:03.08
+Josette Norris|USA|4:03.16
+Mebriht Mekonen|ETH|4:03.29
+Federica Del Buono|ITA|4:03.45
+Hanna Klein|GER|4:03.46
+Katharina Trost|GER|4:03.53
+Katie Snowden|GBR|4:03.76
+Marta Pen Freitas|POR|4:03.79
+Wubrist Aschal|ETH|4:03.86
+Judith Kiyeng|KEN|4:03.87
+Susan Lokayo Ejore|KEN|4:03.98
+Allie Wilson|USA|4:04.02
+Wezam Tesfay|ETH|4:04.12
+Nikki Hiltz|USA|4:04.12
+Melissa Courtney-Bryant|GBR|4:04.13
+Konstanze Klosterhalfen|GER|4:04.15
+Kristina Mäki|CZE|4:04.17
+`),
+  ...righe('5000m', 'M', 2022, `
+Jacob KROP|KEN|12:45.71
+Nicholas KIPKORIR|KEN|12:46.33
+Grant FISHER|USA|12:46.96
+Berihu AREGAWI|ETH|12:50.05
+Yomif KEJELCHA|ETH|12:52.10
+Dominic Lokinyomo LOBALU|SSD|12:52.15
+Selemon BAREGA|ETH|12:54.87
+Daniel Simiu EBENYO|KEN|12:54.90
+Mohammed AHMED|CAN|12:55.84
+Stewart MCSWEYN|AUS|12:56.50
+Marc SCOTT|GBR|12:57.08
+Telahun Haile BEKELE|ETH|12:57.18
+Joshua CHEPTEGEI|UGA|12:57.99
+Muktar EDRIS|ETH|12:58.63
+Thierry NDIKUMWENAYO|BDI|12:59.39
+Oscar CHELIMO|UGA|13:00.42
+Emmanuel BOR|USA|13:00.48
+Milkesa MENGESHA|ETH|13:01.11
+Levy KIBET|KEN|13:01.32
+Andreas ALMGREN|SWE|13:01.70
+Jakob INGEBRIGTSEN|NOR|13:02.03
+Addisu YIHUNE|ETH|13:02.10
+Luis GRIJALVA|GUA|13:02.94
+Mohamed ABDILAAHI|GER|13:03.18
+Cornelius KEMBOI|KEN|13:03.49
+Sam ATKIN|GBR|13:03.64
+Samuel TEFERA|ETH|13:04.35
+Joe KLECKER|USA|13:04.42
+Getnet WALE|ETH|13:04.48
+Merhawi MEBRAHTU|ERI|13:04.49
+Isaac KIMELI|BEL|13:04.72
+Yemaneberhan CRIPPA|ITA|13:04.95
+William KINCAID|USA|13:05.56
+Jack RAYNER|AUS|13:06.00
+Adel MECHAAL|ESP|13:06.02
+Isaac Kibet NDIEMA|KEN|13:06.18
+Edward Zakayo PINGUA|KEN|13:06.29
+Abdihamid NUR|USA|13:06.32
+Cooper TEARE|USA|13:06.73
+Ouassim OUMAIZ|ESP|13:06.74
+Lopez LOMONG|USA|13:07.40
+Peter MARU|UGA|13:07.42
+Jonas RAESS|SUI|13:07.95
+Felix Kiptarus KORIR|KEN|13:07.99
+Jacob KIPLIMO|UGA|13:08.08
+Kieran TUNTIVATE|THA|13:08.41
+Emmanuel Kiprop KIPRUTO|KEN|13:08.42
+Egide NTAKARUTIMANA|BDI|13:08.43
+Cole HOCKER|USA|13:08.55
+Jimmy GRESSIER|FRA|13:08.75
+`),
+  ...righe('5000m', 'F', 2022, `
+Ejgayehu TAYE|ETH|14:12.98
+Letesenbet GIDEY|ETH|14:24.59
+Dawit SEYAUM|ETH|14:25.84
+Gudaf TSEGAY|ETH|14:26.69
+Karoline Bjerkeli GRØVDAL|NOR|14:31.07
+Alicia MONSON|USA|14:31.11
+Gabriela DEBUES-STAFFORD|CAN|14:31.38
+Almaz AYANA|ETH|14:32.17
+Elise CRANNY|USA|14:33.17
+Hawi FEYSA|ETH|14:33.66
+Rahel DANIEL|ERI|14:36.66
+Konstanze KLOSTERHALFEN|GER|14:37.94
+Beatrice CHEBET|KEN|14:38.21
+Yasemin CAN|TUR|14:41.40
+Eilish MCCOLGAN|GBR|14:42.14
+Tsigie GEBRESELAMA|ETH|14:43.90
+Lemlem HAILU|ETH|14:44.73
+Margaret AKIDOR|KEN|14:44.83
+Teresiah Muthoni GATERI|KEN|14:44.89
+Daisy JEPKEMEI|KAZ|14:45.69
+Fantu WORKU|ETH|14:47.37
+Margaret Chelimo KIPKEMBOI|KEN|14:47.71
+Abersh MINSEWO|ETH|14:47.98
+Sifan HASSAN|NED|14:48.12
+Selah BUSIENEI|KEN|14:48.24
+Tabithanjeri KAMAU|KEN|14:48.26
+Courtney FRERICHS|USA|14:48.75
+Girmawit GEBRZIHAIR|ETH|14:49.97
+Judy Jepngetich CHEPASKWONY|KEN|14:50.20
+Laura GALVÁN|MEX|14:51.15
+Agnes Mwikali MUTUKU|KEN|14:51.35
+Hanna KLEIN|GER|14:51.71
+Caroline Chepkoech KIPKIRUI|KAZ|14:52.54
+Elly HENES|USA|14:52.87
+Karissa SCHWEIZER|USA|14:53.69
+Pauline KAMULU|KEN|14:54.19
+Amy-Eloise MARKOVC|GBR|14:56.60
+Weini KELATI FREZGHI|USA|14:57.07
+Jess JUDD|GBR|14:57.19
+Nozomi TANAKA|JPN|14:58.60
+Maureen KOSTER|NED|15:00.64
+Emily INFELD|USA|15:00.98
+Fantaye BELAYNEH|ETH|15:01.89
+Ririka HIRONAKA|JPN|15:02.03
+Esther CHEBET|UGA|15:02.15
+Calli THACKERY|GBR|15:02.55
+Millie PALADINO|USA|15:02.63
+Janeth Nyiva MUTUNGI|KEN|15:03.34
+Naomi MUSSONI|KEN|15:03.72
+Hellen Ekalale LOBUN|KEN|15:03.94
+`),
+  ...righe('10000m', 'M', 2022, `
+Grant FISHER|USA|26:33.84
+Mohammed AHMED|CAN|26:34.14
+Selemon BAREGA|ETH|26:44.73
+Tadese WORKU|ETH|26:45.91
+Berihu AREGAWI|ETH|26:46.13
+Yomif KEJELCHA|ETH|26:49.39
+Richard YATOR|KEN|26:54.76
+Benard Kibet KOECH|KEN|26:55.04
+Milkesa MENGESHA|ETH|27:00.24
+Emmanuel Korir KIPLAGAT|KEN|27:07.59
+Jacob KIPLIMO|UGA|27:09.19
+Sabastian Kimaru SAWE|KEN|27:09.46
+Benson KIPLANGAT|KEN|27:09.83
+Samwel Chebolei MASAI|KEN|27:10.06
+Gideon Kipkertich RONO|KEN|27:11.03
+Daniel Simiu EBENYO|KEN|27:11.26
+Philemon Kiplagat RUTO|KEN|27:11.52
+Evans Keitany KIPTUM|KEN|27:11.88
+Jonathan Muia NDIKU|KEN|27:12.84
+Kiprono SITONIK|KEN|27:14.76
+Jack RAYNER|AUS|27:15.35
+Cosmas Mwangi BOI|KEN|27:15.58
+Nicholas Mboroto KOSIMBEI|KEN|27:15.83
+Yemaneberhan CRIPPA|ITA|27:16.18
+Tsegay KIDANU|ETH|27:16.76
+Sean MCGORTY|USA|27:18.15
+Stanley Waithaka MBURU|KEN|27:19.86
+Habtom SAMUEL|ERI|27:20.08
+Kibiwott KANDIE|KEN|27:20.34
+Benard KIMELI|KEN|27:20.84
+James KIMEU|KEN|27:21.13
+Kieran TUNTIVATE|THA|27:23.64
+Patrick DEVER|GBR|27:23.88
+Joseph Mana NDIRANGU|KEN|27:24.36
+Jimmy GRESSIER|FRA|27:24.51
+Egide NTAKARUTIMANA|BDI|27:24.59
+Shadrack KIPCHIRCHIR|USA|27:24.93
+Conner MANTZ|USA|27:25.23
+Rodrigue KWIZERA|BDI|27:25.47
+Titus WANBUA|KEN|27:25.70
+Evans Kipkemei KURUI|KEN|27:27.33
+Joshua CHEPTEGEI|UGA|27:27.43
+Takuya HANYU|JPN|27:27.49
+Richard LODUNG|KEN|27:27.51
+Alexander MUNYAO|KEN|27:29.85
+Nelson MANDELA|KEN|27:29.92
+Justus SOGET|KEN|27:30.31
+Charles Karanja KAMAU|KEN|27:30.44
+Josphat Ledama KISAISA|KEN|27:30.45
+Rogers KIBET|UGA|27:31.08
+`),
+  ...righe('10000m', 'F', 2022, `
+Letesenbet GIDEY|ETH|30:09.94
+Hellen OBIRI|KEN|30:10.02
+Margaret Chelimo KIPKEMBOI|KEN|30:10.07
+Sifan HASSAN|NED|30:10.56
+Rahel DANIEL|ERI|30:12.15
+Ejgayehu TAYE|ETH|30:12.45
+Elise CRANNY|USA|30:14.66
+Caroline Chepkoech KIPKIRUI|KAZ|30:17.64
+Bosena MULATIE|ETH|30:17.77
+Karissa SCHWEIZER|USA|30:18.05
+Eilish MCCOLGAN|GBR|30:19.02
+Pauline KAMULU|KEN|30:20.97
+Yasemin CAN|TUR|30:32.57
+Jess JUDD|GBR|30:35.93
+Ririka HIRONAKA|JPN|30:39.71
+Lonah Chemtai SALPETER|ISR|30:46.37
+Girmawit GEBRZIHAIR|ETH|30:47.72
+Almaz AYANA|ETH|30:48.48
+Irine Chepet CHEPTAI|KEN|30:49.52
+Alicia MONSON|USA|30:51.09
+Yalemzerf YEHUALAW|ETH|30:54.28
+Dominique SCOTT|RSA|31:00.10
+Stella CHESANG|UGA|31:01.04
+Hawi FEYSA|ETH|31:03.32
+Tsigie GEBRESELAMA|ETH|31:04.88
+Konstanze KLOSTERHALFEN|GER|31:05.21
+Sheila CHEPKIRUI|KEN|31:09.46
+Natosha ROGERS|USA|31:10.57
+Weini KELATI FREZGHI|USA|31:11.11
+Abersh MINSEWO|ETH|31:13.53
+Sharon LOKEDI|KEN|31:14.41
+Andrea SECCAFIEN|CAN|31:15.78
+Eva CHERONO|KEN|31:16.93
+Tabithanjeri KAMAU|KEN|31:17.40
+Rose DAVIES|AUS|31:18.54
+Millie PALADINO|USA|31:19.92
+Samantha HARRISON|GBR|31:21.53
+Sarah LANCASTER|USA|31:21.75
+Rino GOSHIMA|JPN|31:22.38
+Paige STONER|USA|31:22.55
+Hellen Ekalale LOBUN|KEN|31:22.89
+Courtney FRERICHS|USA|31:23.13
+Selamawit TEFERI|ISR|31:24.03
+Emily LIPARI|USA|31:24.82
+Amy-Eloise MARKOVC|GBR|31:25.57
+Mercyline CHELANGAT|UGA|31:28.26
+Emily INFELD|USA|31:30.04
+Ednah KURGAT|USA|31:32.25
+Emily DURGIN|USA|31:33.83
+Ai HOSODA|JPN|31:35.44
+`),
+  ...righe('ostacoli', 'M', 2022, `
+Devon ALLEN|USA|12.84
+Grant HOLLOWAY|USA|12.99
+Rasheed BROADBELL|JAM|12.99
+Trey CUNNINGHAM|USA|13.00
+Freddie CRITTENDEN|USA|13.00
+Daniel ROBERTS|USA|13.03
+Hansle PARCHMENT|JAM|13.08
+Jamal BRITT|USA|13.08
+Shunya TAKAYAMA|JPN|13.10
+Asier MARTÍNEZ|ESP|13.14
+Pascal MARTINOT-LAGARDE|FRA|13.14
+Eric EDWARDS|USA|13.15
+Omar MCLEOD|JAM|13.17
+Rafael PEREIRA|BRA|13.17
+Sasha ZHOYA|FRA|13.17
+Orlando BENNETT|JAM|13.18
+Joshua ZELLER|GBR|13.19
+Shunsuke IZUMIYA|JPN|13.21
+Aaron MALLETT|USA|13.22
+Wilhem BELOCIAN|FRA|13.23
+Gabriel CONSTANTINO|BRA|13.23
+Damian CZYKIER|POL|13.25
+Jason JOSEPH|SUI|13.25
+Roger IRIBARNE|CUB|13.26
+Eduardo RODRIGUES|BRA|13.27
+Rachid MURATAKE|JPN|13.27
+Just KWAOU-MATHEY|FRA|13.27
+Robert DUNNING|USA|13.27
+Sergey SHUBENKOV|RUS|13.27
+Andrew POZZI|GBR|13.28
+Aurel MANGA|FRA|13.29
+Damion THOMAS|JAM|13.30
+Shane BRATHWAITE|BAR|13.30
+Enrique LLOPIS|ESP|13.30
+Milan TRAJKOVIC|CYP|13.32
+Michael DICKSON|USA|13.34
+Tyler MASON|JAM|13.34
+Weibo QIN|CHN|13.35
+Jahmaal WILSON|BAH|13.35
+Wellington ZAZA|LBR|13.36
+Maliek KENDALL|USA|13.36
+Mikdat SEVLER|TUR|13.36
+Amine BOUANANI|ALG|13.37
+Wenjun XIE|CHN|13.38
+Jamar MARSHALL|USA|13.39
+Kentre PATTERSON|USA|13.39
+Shuhei ISHIKAWA|JPN|13.39
+Jarret EATON|USA|13.40
+Michael O'HARA|JAM|13.40
+Tre'Bien GILBERT|USA|13.41
+`),
+  ...righe('ostacoli', 'F', 2022, `
+Tobi AMUSAN|NGR|12.12
+Kendra HARRISON|USA|12.27
+Jasmine CAMACHO-QUINN|PUR|12.27
+Britany ANDERSON|JAM|12.31
+Alaysha JOHNSON|USA|12.35
+Tia JONES|USA|12.38
+Danielle WILLIAMS|JAM|12.41
+Alia ARMSTRONG|USA|12.43
+Demisha ROSWELL|JAM|12.44
+Ackera NUGENT|JAM|12.45
+Tonea MARSHALL|USA|12.46
+Devynne CHARLTON|BAH|12.46
+Nia ALI|USA|12.49
+Cindy SEMBER|GBR|12.50
+Pia SKRZYSZOWSKA|POL|12.51
+Megan TAPPER|JAM|12.51
+Gabriele CUNNINGHAM|USA|12.56
+Grace STARK|USA|12.58
+Paula SALMON|USA|12.63
+Elvira HERMAN|BLR|12.65
+Chanel BRISSETT|USA|12.65
+Jasmine JONES|USA|12.66
+Michelle JENNEKE|AUS|12.66
+Nadine VISSER|NED|12.66
+Christina CLEMONS|USA|12.68
+Crystal MORRISON|JAM|12.69
+Luca KOZÁK|HUN|12.69
+Ditaji KAMBUNDJI|SUI|12.70
+Kaylah ROBINSON|USA|12.71
+Masai RUSSELL|USA|12.71
+Liz CLAY|AUS|12.72
+Jade BARBER|USA|12.72
+Mako FUKUBE|JPN|12.73
+Kristi CASTLIN|USA|12.74
+Michelle HARRISON|CAN|12.74
+Sydney MCLAUGHLIN|USA|12.75
+Cyréna SAMBA-MAYELA|FRA|12.76
+Kerrica HILL|JAM|12.77
+Rayniah JONES|USA|12.79
+Sarah LAVIN|IRL|12.79
+Laeticia BAPTÉ|FRA|12.80
+Mulern JEAN|HAI|12.81
+Sharika NELVIS|USA|12.82
+Destiny HUVEN|USA|12.82
+Andrea Carolina VARGAS|CRC|12.82
+Mariam ABDUL-RASHID|CAN|12.82
+Jyothi YARRAJI|IND|12.82
+Anna COCKRELL|USA|12.84
+Mette GRAVERSGAARD|DEN|12.84
+Masumi AOKI|JPN|12.86
+`),
+  ...righe('400hs', 'M', 2022, `
+Alison DOS SANTOS|BRA|46.29
+Rai BENJAMIN|USA|46.89
+Karsten WARHOLM|NOR|47.12
+Kyron MCMASTER|IVB|47.34
+Trevor BASSITT|USA|47.39
+Wilfried HAPPIO|FRA|47.41
+Khallifah ROSSER|USA|47.59
+Rasmus MÄGI|EST|47.82
+Jaheel HYDE|JAM|48.03
+Quincy HALL|USA|48.10
+CJ ALLEN|USA|48.17
+Ludvy VAILLANT|FRA|48.26
+Yasmani COPELLO|TUR|48.27
+Ezekiel NATHANIEL|NGR|48.42
+Carl BENGTSTRÖM|SWE|48.52
+Kemar MOWATT|JAM|48.53
+Amere LATTIN|USA|48.53
+Joshua ABUAKU|GER|48.55
+Julien WATRIN|BEL|48.66
+Sean BURRELL|USA|48.70
+Quivell JORDAN-BACOT|USA|48.72
+Isaiah LEVINGSTON|USA|48.82
+Constantin PREIS|GER|48.83
+Moitalel MPOKE|KEN|48.84
+İsmail NEZIR|TUR|48.84
+Quincy DOWNING|USA|48.86
+Gerald DRUMMOND|CRC|48.87
+Abdelmalik LAHOULOU|ALG|48.87
+Alastair CHALMERS|GBR|48.88
+Malik METIVIER|CAN|48.89
+Kazuki KUROKAWA|JPN|48.89
+Josè BENCOSME DE LEON|ITA|48.91
+Matic Ian GUČEK|SLO|48.91
+Aldrich BAILEY JR|USA|49.01
+Mario LAMBRUGHI|ITA|49.03
+Drake SCHNEIDER|USA|49.04
+Shawn ROWE|JAM|49.05
+Fyodor IVANOV|RUS|49.06
+Nick SMIDT|NED|49.07
+Tenjiro TANAKA|JPN|49.07
+Wiseman Were MUKHOBE|KEN|49.09
+Jason BALDRIDGE|USA|49.10
+Julien BONVIN|SUI|49.10
+Victor COROLLER|FRA|49.11
+Thomas BARR|IRL|49.15
+Vladimir LYSENKO|RUS|49.15
+Sokwakhana ZAZINI|RSA|49.17
+Chris ROBINSON|USA|49.18
+David KENDZIERA|USA|49.20
+Ramsey ANGELA|NED|49.20
+`),
+  ...righe('400hs', 'F', 2022, `
+Sydney MCLAUGHLIN|USA|50.68
+Femke BOL|NED|52.27
+Britton WILSON|USA|53.08
+Dalilah MUHAMMAD|USA|53.13
+Rushell CLAYTON|JAM|53.33
+Andrenette KNIGHT|JAM|53.39
+Janieve RUSSELL|JAM|53.52
+Shamier LITTLE|USA|53.61
+Gianna WOODRUFF|PAN|53.69
+Shiann SALMON|JAM|53.82
+Line KLOSTER|NOR|53.91
+Anna COCKRELL|USA|53.98
+Jessie KNIGHT|GBR|54.09
+Viktoriya TKACHUK|UKR|54.24
+Anna RYZHYKOVA|UKR|54.25
+Carolina KRAFZIK|GER|54.32
+Sara GALLEGO|ESP|54.34
+Ayomide FOLORUNSO|ITA|54.34
+Zenéy VAN DER WALT|RSA|54.47
+Anna HALL|USA|54.48
+Viivi LEHIKOINEN|FIN|54.50
+Amalie IUEL|NOR|54.68
+Lina NIELSEN|GBR|54.73
+Melissa GONZALEZ|COL|54.80
+Cassandra TATE|USA|54.81
+Masai RUSSELL|USA|55.02
+Ashley SPENCER|USA|55.19
+Hanne CLAES|BEL|55.23
+Grace CLAXTON|PUR|55.25
+Paulien COUCKUYT|BEL|55.30
+Taylon BIELDT|RSA|55.30
+Shannon MEISBERGER|USA|55.39
+Rebecca SARTORI|ITA|55.40
+Portia BING|NZL|55.44
+Lauren HOFFMAN|USA|55.47
+Hayley MCLEAN|GBR|55.48
+Nikoleta JÍCHOVÁ|CZE|55.48
+Sarah CARLI|AUS|55.57
+Ronda WHYTE|JAM|55.59
+Jiadie MO|CHN|55.61
+Jessica TURNER|GBR|55.63
+Zurian HECHAVARRÍA|CUB|55.68
+Linda OLIVIERI|ITA|55.69
+Eleonora MARCHIANDO|ITA|55.69
+Tia-Adana BELLE|BAR|55.75
+Elisabeth SLETTUM|NOR|55.77
+Camille SERI|FRA|55.79
+Wenda NEL|RSA|55.84
+Gisèle WENDER|GER|55.84
+Jessica TAPPIN|GBR|55.89
+`),
+  ...righe('siepi', 'M', 2022, `
+Soufiane EL BAKKALI|MAR|7:58.28
+Lamecha GIRMA|ETH|7:58.68
+Hailemariyam AMARE|ETH|8:06.29
+Abraham KIBIWOT|KEN|8:06.73
+Getnet WALE|ETH|8:06.74
+Conseslus KIPRUTO|KEN|8:08.76
+Amos SEREM|KEN|8:09.93
+Ahmed ABDELWAHED|ITA|8:10.29
+Osama ZOGHLAMI|ITA|8:11.00
+Avinash Mukund SABLE|IND|8:11.20
+Leonard Kipkemoi BETT|KEN|8:12.08
+Hillary BOR|USA|8:12.19
+Ryuji MIURA|JPN|8:12.65
+Daniel ARCE|ESP|8:14.31
+Amos KIRUI|KEN|8:14.63
+Abrham SIME|ETH|8:14.87
+Frederik RUPPERT|GER|8:15.58
+Mehdi BELHADJ|FRA|8:16.35
+Mohamed Amin JHINAOUI|TUN|8:16.38
+Víctor RUIZ|ESP|8:16.42
+Sebastián MARTOS|ESP|8:16.46
+Evan JAGER|USA|8:16.99
+Benjamin KIGEN|KEN|8:17.32
+Lawrence Kemboi KIPSANG|KEN|8:17.98
+Ahmed JAZIRI|TUN|8:18.70
+Yemane HAILESELASSIE|ERI|8:18.75
+Duncan HAMILTON|USA|8:18.88
+Parker STOKES|USA|8:18.88
+Brian BARRAZA|USA|8:19.16
+Benard KETER|USA|8:19.16
+Travis MAHONEY|USA|8:19.18
+Topi RAITANEN|FIN|8:19.34
+Vidar JOHANSSON|SWE|8:19.57
+Salah Eddine BEN YAZIDE|MAR|8:19.63
+Ben BUCKINGHAM|AUS|8:19.79
+Samuel FIREWU|ETH|8:19.82
+Ryan SMEETON|CAN|8:20.06
+Ryoma AOKI|JPN|8:20.09
+Mohamed TINDOUFT|MAR|8:20.12
+Edward TRIPPAS|AUS|8:20.29
+Bilal TABTI|ALG|8:20.71
+John GAY|CAN|8:20.77
+Hichem BOUCHICHA|ALG|8:21.06
+Jacob BOUTERA|NOR|8:21.69
+Maksim YAKUSHEV|RUS|8:21.95
+Kenneth ROOKS|USA|8:22.56
+Daniel MICHALSKI|USA|8:22.56
+Philemon Kiplagat RUTO|KEN|8:22.72
+Jean-Simon DESGAGNÉS|CAN|8:22.95
+Isaac UPDIKE|USA|8:22.96
+`),
+  ...righe('siepi', 'F', 2022, `
+Norah JERUTO|KAZ|8:53.02
+Werkuha GETACHEW|ETH|8:54.61
+Mekides ABEBE|ETH|8:56.08
+Winfred YAVI|BRN|8:56.55
+Jackline CHEPKOECH|KEN|9:02.43
+Peruth CHEMUTAI|UGA|9:05.54
+Faith CHEROTICH|KEN|9:06.14
+Zerfe WONDEMAGEGN|ETH|9:06.37
+Elizabeth BIRD|GBR|9:07.87
+Emma COBURN|USA|9:07.93
+Sembo ALMAYEW|ETH|9:09.19
+Olga VOVK|RUS|9:09.29
+Courtney WAYMENT|USA|9:09.91
+Luiza GEGA|ALB|9:10.04
+Celliphine Chepteek CHESPOL|KEN|9:10.17
+Courtney FRERICHS|USA|9:10.59
+Yekaterina IVONINA|RUS|9:11.39
+Marwa BOUZAYANI|TUN|9:12.14
+Alice FINOT|FRA|9:14.34
+Lea MEYER|GER|9:15.35
+Aimee PRATT|GBR|9:15.64
+Daisy JEPKEMEI|KAZ|9:15.77
+Maruša MIŠMAŠ ZRIMŠEK|SLO|9:17.14
+Chiara SCHERRER|SUI|9:20.28
+Gesa Felicitas KRAUSE|GER|9:21.02
+Amy CASHIN|AUS|9:21.46
+Irene SÁNCHEZ-ESCRIBANO|ESP|9:23.94
+Tatiane Raquel DA SILVA|BRA|9:24.38
+Nataliya STREBKOVA|UKR|9:24.54
+Beatrice CHEPKOECH|KEN|9:24.73
+Gabrielle JENNINGS|USA|9:25.05
+Kayley DELAY|USA|9:25.08
+Alicja KONIECZEK|POL|9:25.15
+Annie RODENFELS|USA|9:25.48
+Tuğba GÜVENÇ|TUR|9:25.58
+Purity KIRUI|KEN|9:26.88
+Lomi MULETA|ETH|9:26.89
+Carolina ROBLES|ESP|9:28.24
+Belén CASETTA|ARG|9:29.05
+Katie RAINSBERGER|USA|9:29.77
+Caren CHEBET|KEN|9:30.42
+Asimarech NAGA|ETH|9:30.46
+Ceili MCCABE|CAN|9:30.69
+Valerie CONSTIEN|USA|9:31.20
+Regan YEE|CAN|9:31.77
+Elise THORNER|GBR|9:32.42
+Rosefline CHEPNGETICH|KEN|9:32.67
+Alex TEUBEL|USA|9:32.81
+Ikram OUAAZIZ|MAR|9:32.87
+Brielle ERBACHER|AUS|9:32.96
+`),
+  ...righe('maratona', 'M', 2022, `
+Eliud KIPCHOGE|KEN|2:01:09
+Kelvin KIPTUM|KEN|2:01:53
+Gabriel Gerald GEAY|TAN|2:03:00
+Amos KIPRUTO|KEN|2:03:13
+Alexander MUNYAO|KEN|2:03:29
+Tamirat TOLA|ETH|2:03:40
+Benson KIPRUTO|KEN|2:04:24
+Kaan Kigen ÖZBILEN|TUR|2:04:36
+Asrar HIYRDEN|ETH|2:04:43
+Mosinet GEREMEW|ETH|2:04:43
+Cybrian KOTUT|KEN|2:04:47
+Stephen KISSA|UGA|2:04:48
+Herpasa NEGASA|ETH|2:04:49
+Seifu TURA|ETH|2:04:49
+Tsegaye GETACHEW|ETH|2:04:49
+Daniel DO NASCIMENTO|BRA|2:04:51
+Titus KIPRUTO|KEN|2:04:54
+Abdi NAGEEYE|NED|2:04:56
+Leul GEBRESILASE|ETH|2:04:56
+Chalu DESO|ETH|2:04:56
+Bazezew ASMARE|ETH|2:04:57
+John KORIR|KEN|2:05:01
+Abraham KIPTOO|KEN|2:05:04
+Mohamed ESA|ETH|2:05:05
+Workineh TADESE|ETH|2:05:07
+Victor KIPLANGAT|UGA|2:05:09
+Adeledelew MAMO|ETH|2:05:12
+Reuben Kiprop KIPYEGO|KEN|2:05:12
+Bashir ABDI|BEL|2:05:19
+Daniel KIBET|KEN|2:05:20
+Timothy KIPLAGAT|KEN|2:05:20
+Morhad AMDOUNI|FRA|2:05:22
+Kinde ATANAW|ETH|2:05:27
+Kengo SUZUKI|JPN|2:05:28
+Milkesa MENGESHA|ETH|2:05:29
+Nobert KIGEN|KEN|2:05:32
+Ghirmay GHEBRESLASSIE|ERI|2:05:34
+Ronald KORIR|KEN|2:05:37
+Laban Kipngetich KORIR|KEN|2:05:41
+Philemon KIPLIMO|KEN|2:05:44
+Adugna TAKELE|ETH|2:05:52
+Yihunilign ADANE|ETH|2:05:53
+Kenenisa BEKELE|ETH|2:05:53
+Gebru REDAHGNE|ETH|2:05:58
+Mark KORIR|KEN|2:05:58
+Abayneh DEGU|ETH|2:06:03
+Kebede TULU|ETH|2:06:03
+Andualem BELAY|ETH|2:06:04
+Abebe NEGEWO|ETH|2:06:05
+Mike Kiptum BOIT|KEN|2:06:08
+`),
+  ...righe('maratona', 'F', 2022, `
+Ruth CHEPNGETICH|KEN|2:14:18
+Amane Beriso SHANKULE|ETH|2:14:58
+Tigst ASSEFA|ETH|2:15:37
+Brigid KOSGEI|KEN|2:16:02
+Letesenbet GIDEY|ETH|2:16:49
+Almaz AYANA|ETH|2:17:20
+Yalemzerf YEHUALAW|ETH|2:17:23
+Sheila CHEPKIRUI|KEN|2:17:29
+Tadu TESHOME|ETH|2:17:36
+Ashete BEKERE|ETH|2:17:58
+Rosemary WANJIRU|KEN|2:18:00
+Tigist ABAYECHEW|ETH|2:18:03
+Joan Chelimo MELLY|ROU|2:18:04
+Genzebe DIBABA|ETH|2:18:05
+Joyciline JEPKOSGEI|KEN|2:18:07
+Gotytom GEBRESLASE|ETH|2:18:11
+Fancy CHEMUTAI|KEN|2:18:11
+Sutume Asefa KEBEDE|ETH|2:18:12
+Judith Jeptum KORIR|KEN|2:18:20
+Emily SISSON|USA|2:18:29
+Megertu ALEMU|ETH|2:18:32
+Angela TANUI|KEN|2:18:42
+Lonah Chemtai SALPETER|ISR|2:18:45
+Tiruye MESFIN|ETH|2:18:47
+Workenesh EDESA|ETH|2:18:51
+Tigist GIRMA|ETH|2:18:52
+Hiwot GEBREKIDAN|ETH|2:19:10
+Keira D'AMATO|USA|2:19:12
+Eunice Chebichii CHUMBA|BRN|2:20:02
+Etagegn WOLDU|ETH|2:20:03
+Celestine CHEPCHIRCHIR|KEN|2:20:10
+Vivian KIPLAGAT|KEN|2:20:18
+Mary Wacera NGUGI|KEN|2:20:22
+Nazret WELDU|ERI|2:20:29
+Dolshi TESFU|ERI|2:20:40
+Sisay Meseret GOLA|ETH|2:20:50
+Mizuki MATSUDA|JPN|2:20:52
+Vibian CHEPKURUI|KEN|2:20:59
+Majida MAAYOUF|MAR|2:21:01
+Mao ICHIYAMA|JPN|2:21:02
+Ruth CHEBITOK|KEN|2:21:03
+Siranesh YIRGA|ETH|2:21:08
+Maurine CHEPKEMOI|KEN|2:21:10
+Yeshi Kalayu CHEKOLE|ETH|2:21:17
+Hitomi NIIYA|JPN|2:21:17
+Mare DIBABA|ETH|2:21:25
+Biruktayit DEGEFA|ETH|2:21:34
+Sinead DIVER|AUS|2:21:34
+Ruti AGA|ETH|2:21:41
+Ai HOSODA|JPN|2:21:42
+`),
+  ...righe('marcia', 'M', 2022, `
+Vasiliy MIZINOV|ANA|1:17:47
+Sergey SHIROBOKOV|RUS|1:18:36
+Anton KURBATOV|RUS|1:18:46
+Danila MARTYNOV|RUS|1:18:50
+Koki IKEDA|JPN|1:18:53
+Caio BONFIM|BRA|1:18:54
+Eiki TAKAHASHI|JPN|1:19:04
+Toshikazu YAMANISHI|JPN|1:19:07
+Álvaro MARTÍN|ESP|1:19:11
+Perseus KARLSTRÖM|SWE|1:19:18
+Samuel Kireri GATHIMBA|KEN|1:19:25
+Brian Daniel PINTADO|ECU|1:19:34
+David KENNY|IRL|1:19:44
+Diego GARCÍA CARRERA|ESP|1:19:45
+Daisuke MATSUNAGA|JPN|1:19:53
+Alberto AMEZCUA|ESP|1:19:58
+Francesco FORTUNATO|ITA|1:20:06
+Zhaozhao WANG|CHN|1:20:10
+Lihong CUI|CHN|1:20:12
+Hiroto JUSHO|JPN|1:20:14
+Wenchao NIU|CHN|1:20:17
+Hao XU|CHN|1:20:18
+Subaru ISHIDA|JPN|1:20:22
+Tomohiro NODA|JPN|1:20:24
+Byeongkwang CHOE|KOR|1:20:29
+Andres Eduardo OLIVAS NÚÑEZ|MEX|1:20:31
+David HURTADO|ECU|1:20:31
+Nils BREMBACH|GER|1:20:32
+José MONTANA|COL|1:20:34
+Yuta KOGA|JPN|1:20:34
+Wayne SNYMAN|RSA|1:20:39
+Miguel Ángel LÓPEZ|ESP|1:20:41
+Declan TINGAY|AUS|1:20:44
+César Augusto RODRÍGUEZ|PER|1:20:45
+Yandong LI|CHN|1:20:46
+Kevin CAMPION|FRA|1:20:47
+Jesus CALDERON|MEX|1:20:49
+Salih KORKMAZ|TUR|1:20:50
+Haruki MANJU|JPN|1:20:52
+Karl JUNGHANNß|GER|1:20:53
+Christopher LINKE|GER|1:20:54
+José Alejandro BARRONDO|GUA|1:20:56
+Manuel BERMÚDEZ|ESP|1:21:02
+Artem SELIN|RUS|1:21:03
+Motofumi SUWA|JPN|1:21:12
+José Eduardo ORTIZ|GUA|1:21:16
+Massimo STANO|ITA|1:21:18
+Eider ARÉVALO|COL|1:21:20
+Artemiy VERSHININ|RUS|1:21:24
+Kiril GRUDKIN|RUS|1:21:30
+`),
+  ...righe('marcia', 'F', 2022, `
+Elvira CHEPAREVA|ANA|1:26:12
+Kimberly GARCÍA LEÓN|PER|1:26:58
+Jiayu YANG|CHN|1:27:14
+Jemima MONTAG|AUS|1:27:27
+Katarzyna ZDZIEBŁO|POL|1:27:31
+Reykhan KAGRAMANOVA|RUS|1:27:35
+María PÉREZ|ESP|1:27:40
+Klavdiya AFANASYEVA|RUS|1:27:47
+Shijie QIEYANG|CHN|1:27:50
+Zhenxia MA|CHN|1:28:03
+Li MA|CHN|1:28:04
+Liujing YANG|CHN|1:28:12
+Anna TERLYUKEVICH|BLR|1:28:44
+Hong LIU|CHN|1:29:00
+Nanako FUJII|JPN|1:29:01
+Antigoni NTRISMPIOTI|GRE|1:29:03
+Anastasiya KOLCHINA|RUS|1:29:24
+Valeria ORTUÑO|MEX|1:29:25
+Saskia FEIGE|GER|1:29:25
+Alina YUSHCHANKA|BLR|1:29:29
+Wenxiu SU|CHN|1:29:30
+Kumiko OKADA|JPN|1:29:31
+Alegna GONZÁLEZ|MEX|1:29:40
+Lyudmila OLYANOVSKA|UKR|1:29:46
+Valentina TRAPLETTI|ITA|1:29:47
+Johana ORDÓŇEZ|ECU|1:29:58
+Quanming WU|CHN|1:30:10
+Nadezhda SERGEYEVA|ANA|1:30:15
+Zhuoma QIJI|CHN|1:30:26
+Lan GAO|CHN|1:30:27
+Haiying JI|CHN|1:30:29
+Ana CABECINHA|POR|1:30:29
+Sofya TIMOSHENKO|RUS|1:30:34
+Olga NIEDZIAŁEK|POL|1:30:34
+Laura GARCÍA-CARO|ESP|1:30:36
+Clémence BERETTA|FRA|1:30:37
+Jinyan JIANG|CHN|1:30:52
+Eliška MARTÍNKOVÁ|CZE|1:30:53
+Nicole COLOMBI|ITA|1:30:58
+Olena SOBCHUK|UKR|1:30:59
+Anastasiya RAROUSKAYA|BLR|1:31:05
+Tereza ĎURDIAKOVÁ|CZE|1:31:09
+Glenda MOREJÓN|ECU|1:31:10
+Camille MOUTARD|FRA|1:31:29
+Sofia RAMOS RODRÍGUEZ|MEX|1:31:41
+Hanna SHEVCHUK|UKR|1:31:42
+Maocuo LI|CHN|1:31:43
+Rebecca HENDERSON|AUS|1:31:44
+Barbara OLÁH|HUN|1:31:48
+RAVINA|IND|1:31:52
+`),
+  ...righe('lungo', 'M', 2022, `
+Miltiadis TENTOGLOU|GRE|8.55
+Simon EHAMMER|SUI|8.45
+Thobias MONTLER|SWE|8.38
+SREESHANKAR|IND|8.36
+Jianan WANG|CHN|8.36
+Maykel MASSÓ|CUB|8.35
+Marquis DENDY|USA|8.31
+Emiliano LASA|URU|8.28
+Jingqiang ZHANG|CHN|8.28
+Yuki HASHIOKA|JPN|8.27
+Jeswin ALDRIN|IND|8.26
+Tajay GAYLE|JAM|8.26
+Matthew BOLING|USA|8.25
+LaQuan NAIRN|BAH|8.22
+Christopher MITREVSKI|AUS|8.21
+Jarrion LAWSON|USA|8.19
+Rayvon GREY|USA|8.19
+Brandon HICKLIN|USA|8.18
+José MANDROS|PER|8.17
+Jules POMMERY|FRA|8.17
+Natsuki YAMAKAWA|JPN|8.17
+Jovan VAN VUUREN|RSA|8.16
+Muhammed Anees YAHIYA|IND|8.15
+Eusebio CÁCERES|ESP|8.15
+Steffin MCCARTER|USA|8.15
+Cheswill JOHNSON|RSA|8.14
+Wayne PINNOCK|JAM|8.14
+William WILLIAMS|USA|8.12
+Chenlong YUAN|CHN|8.12
+Hiromichi YOSHIDA|JPN|8.12
+Radek JUŠKA|CZE|8.11
+Héctor SANTOS|ESP|8.11
+Jeremiah DAVIS|USA|8.11
+Henry FRAYNE|AUS|8.11
+Yuto TORIUMI|JPN|8.11
+Changzhou HUANG|CHN|8.10
+William JONES|USA|8.09
+Ja'Von DOUGLAS|USA|8.08
+Jaime GUERRA|ESP|8.08
+Tristan JAMES|DMA|8.08
+Andwuelle WRIGHT|TTO|8.08
+Erwan KONATE|FRA|8.08
+Carey MCLEOD|JAM|8.07
+Keisuke MATSUMOTO|JPN|8.07
+Gabriel BITAN|ROU|8.07
+Carter SHELL|USA|8.06
+Johnny BRACKINS|USA|8.06
+Lester LESCAY|CUB|8.06
+Tom CAMPAGNE|FRA|8.06
+Alejandro PARADA|CUB|8.06
+`),
+  ...righe('lungo', 'F', 2022, `
+Brooke BUSCHKUEHL|AUS|7.13
+Malaika MIHAMBO|GER|7.12
+Ivana VULETA|SRB|7.06
+Tara DAVIS|USA|7.03
+Ese BRUME|NGR|7.02
+Monae' NICHOLS|USA|6.97
+Khaddi SAGNIA|SWE|6.95
+Deborah ACQUAH|GHA|6.94
+Leticia ORO MELO|BRA|6.89
+Quanesha BURKS|USA|6.88
+Maryna BEKH-ROMANCHUK|UKR|6.87
+Jazmin SAWYERS|GBR|6.84
+Milica GARDAŠEVIĆ|SRB|6.83
+Lorraine UGEN|GBR|6.82
+Jasmine MOORE|USA|6.82
+Yulimar ROJAS|VEN|6.81
+Agate DE SOUSA|STP|6.81
+Akela JONES|BAR|6.80
+Christabel NETTEY|CAN|6.80
+María VICENTE|ESP|6.80
+Filippa FOTOPOULOU|CYP|6.79
+Alina ROTARU-KOTTMANN|ROU|6.79
+Tiffany FLYNN|USA|6.78
+Ruth USORO|NGR|6.78
+Fátima DIAME|ESP|6.76
+Jogailė PETROKAITĖ|LTU|6.76
+Esraa OWIS|EGY|6.75
+Evelise VEIGA|POR|6.74
+Claire BRYANT|USA|6.73
+Helena BÖRNER|GER|6.73
+Annik KÄLIN|SUI|6.73
+Ackelia SMITH|JAM|6.73
+Maryse LUZOLO|GER|6.71
+Yanis DAVID|FRA|6.71
+Florentina Costina IUSCO|ROU|6.70
+Samantha DALE|AUS|6.70
+Kendell WILLIAMS|USA|6.69
+Tyra GITTENS|TTO|6.69
+Yelena SOKOLOVA|ANA|6.68
+Natalia LINARES|COL|6.68
+Yuliana ANGULO|ECU|6.67
+Jasmine TODD|USA|6.67
+Larissa IAPICHINO|ITA|6.67
+Sumire HATA|JPN|6.67
+Alysah HICKEY|USA|6.66
+Merle HOMEIER|GER|6.66
+Plamena MITKOVA|BUL|6.66
+Lakshini Sarangi Silva SANDARADURA|SRI|6.65
+Thea LAFOND|DMA|6.64
+Mengyi TAN|CHN|6.63
+`),
+  ...righe('alto', 'M', 2022, `
+Mutaz Essa BARSHIM|QAT|2.37
+Sanghyeok WOO|KOR|2.36
+Ilya IVANYUK|ANA|2.34
+Danil LYSENKO|RUS|2.34
+Gianmarco TAMBERI|ITA|2.34
+JuVaughn HARRISON|USA|2.34
+Shelby MCEWEN|USA|2.33
+Andrii PROTSENKO|UKR|2.33
+Vernon TURNER|USA|2.32
+Loïc GASCH|SUI|2.31
+Hamish KERR|NZL|2.31
+Thiago MOURA|BRA|2.31
+Luis Enrique ZAYAS|CUB|2.30
+Earnest SEARS|USA|2.30
+Darius CARBIN|USA|2.30
+Jonathan KAPITOLNIK|ISR|2.30
+Tomohiro SHINNO|JPN|2.30
+Mateusz PRZYBYLKO|GER|2.30
+Tobias POTYE|GER|2.30
+Corvell TODD|USA|2.29
+Trey CULVER|USA|2.28
+Thomas CARMOY|BEL|2.28
+Django LOVETT|CAN|2.28
+Andrei CHURYLA|BLR|2.28
+Maksim NEDASEKAU|BLR|2.28
+Joel BADEN|AUS|2.28
+Nikita KURBANOV|RUS|2.28
+Ryoichi AKAMATSU|JPN|2.28
+Nauraj Singh RANDHAWA|MAS|2.27
+Ushan Thiwanka PERERA|SRI|2.27
+Fernando FERREIRA|BRA|2.27
+Joel CLARKE-KHAN|GBR|2.27
+Norbert KOBIELSKI|POL|2.27
+Tejaswin SHANKAR|IND|2.27
+Adrijus GLEBAUSKAS|LTU|2.27
+Edgar RIVERA|MEX|2.27
+Oleh DOROSHCHUK|UKR|2.27
+Sarvesh Anil KUSHARE|IND|2.27
+Trey ALLEN|USA|2.27
+Jef VERMEIREN|BEL|2.27
+Roberto VILCHES|MEX|2.26
+Brian RAATS|RSA|2.26
+Xesc TRESENS|ESP|2.26
+Majd Eddin GHAZAL|SYR|2.26
+Nathan ISMAR|FRA|2.26
+Brandon STARC|AUS|2.26
+Marco FASSINOTTI|ITA|2.26
+Yaroslav KUTKOVOY|RUS|2.26
+Matvey TYCHINKIN|RUS|2.25
+Matvey RUDNIK|RUS|2.25
+`),
+  ...righe('alto', 'F', 2022, `
+Yaroslava MAHUCHIKH|UKR|2.05
+Eleanor PATTERSON|AUS|2.02
+Mariya LASITSKENE|ANA|2.01
+Elena VALLORTIGARA|ITA|2.00
+Iryna GERASHCHENKO|UKR|2.00
+Vashti CUNNINGHAM|USA|1.98
+Nadezhda DUBOVITSKAYA|KAZ|1.98
+Nafissatou THIAM|BEL|1.98
+Lamara DISTIN|JAM|1.97
+Safina SADULLAYEVA|UZB|1.97
+Marija VUKOVIĆ|MNE|1.96
+Nicola OLYSLAGERS|AUS|1.96
+Kristina OVCHINNIKOVA|KAZ|1.96
+Angelina TOPIĆ|SRB|1.96
+Karmen BRUUS|EST|1.96
+Emily BORTHWICK|GBR|1.95
+Jelena ROWE|USA|1.95
+Tyra GITTENS|TTO|1.95
+Yuliia LEVCHENKO|UKR|1.95
+Kateryna TABASHNYK|UKR|1.95
+Britt WEERMAN|NED|1.95
+Imke ONNEN|GER|1.94
+Anna CHICHEROVA|RUS|1.94
+Oksana OKUNEVA|UKR|1.94
+Mirela DEMIREVA|BUL|1.93
+Morgan LAKE|GBR|1.93
+Eleftheria CHRISTOGEORGOU|GRE|1.93
+Kimberly WILLIAMSON|JAM|1.93
+Daniela STANCIU|ROU|1.93
+Abigail KWARTENG|GHA|1.92
+Adrianna SUŁEK|POL|1.92
+Ella JUNNILA|FIN|1.92
+Maja NILSSON|SWE|1.92
+Yelizaveta MATVEYEVA|KAZ|1.92
+Natalya SPIRIDONOVA|ANA|1.92
+Mariya KOCHANOVA|ANA|1.92
+Nadezhda ANDRYUKHINA|RUS|1.91
+Laura ZIALOR|GBR|1.91
+Kristina KOROLYOVA|ANA|1.91
+Nicole GREENE|USA|1.91
+Urtė BAIKŠTYTĖ|LTU|1.91
+Jiawen LU|CHN|1.91
+Tatyana YERMACHENKOVA|RUS|1.91
+Erika FURLANI|ITA|1.91
+Yuliia CHUMACHENKO|UKR|1.91
+Hanna HARADSKAYA|BLR|1.91
+Lia APOSTOLOVSKI|SLO|1.91
+Karyna DEMIDIK|BLR|1.91
+Aleksandra YARYSHKINA|RUS|1.90
+Marithe-Thérèse ENGONDO|SUI|1.90
+`),
+  ...righe('triplo', 'M', 2022, `
+Pedro PICHARDO|POR|17.95
+Jordan A. DÍAZ FORTUN|CUB|17.87
+Andy DÍAZ HERNÁNDEZ|CUB|17.70
+Lázaro MARTÍNEZ|CUB|17.64
+Hugues Fabrice ZANGO|BUR|17.55
+Yaming ZHU|CHN|17.31
+Andrea DALLAVALLE|ITA|17.28
+Jaydon HIBBERT|JAM|17.27
+Chengetayi David MAPAYA|ZIM|17.26
+Maksim NIASTSIARENKA|BLR|17.24
+Donald SCOTT|USA|17.21
+Chris CARTER|USA|17.21
+Emmanuel IHEMEJE|ITA|17.20
+Will CLAYE|USA|17.19
+Abdulla Aboobacker NARANGOLINTEVIDA|IND|17.19
+Praveen CHITHRAVEL|IND|17.18
+Karthik UNNIKRISHNAN|IND|17.10
+Almir DOS SANTOS|BRA|17.10
+Andy HECHAVARRÍA|CUB|17.09
+Jean-Marc PONTVIANNE|FRA|17.08
+Yasser Mohammed TRIKI|ALG|17.07
+Benjamin COMPAORÉ|FRA|17.06
+Enzo HODEBAR|FRA|17.05
+Chris BENARD|USA|17.01
+Eldhose PAUL|IND|16.99
+Jah-Nhai PERINCHIEF|BER|16.95
+Marcos RUIZ|ESP|16.94
+Melvin RAFFIN|FRA|16.94
+Yaoqing FANG|CHN|16.93
+Nazim BABAYEV|AZE|16.93
+Tobia BOCCHI|ITA|16.93
+Tiago Luis PEREIRA|POR|16.90
+Max HEß|GER|16.85
+Riku ITO|JPN|16.85
+Thomas GOGOIS|FRA|16.83
+Gyumin YU|KOR|16.82
+Ben WILLIAMS|GBR|16.82
+Dimitrios TSIAMIS|GRE|16.82
+Alexis COPELLO|AZE|16.81
+Huafeng HUANG|CHN|16.81
+Andreas PANTAZIS|GRE|16.79
+Jangwoo KIM|KOR|16.78
+Keyshawn KING|USA|16.77
+Vitaliy PAVLOV|RUS|16.76
+Edislay HODELIN|CUB|16.74
+Necati ER|TUR|16.73
+Alexsandro MELO|BRA|16.72
+Pablo TORRIJOS|ESP|16.72
+Christian TAYLOR|USA|16.72
+Simo LIPSANEN|FIN|16.71
+`),
+  ...righe('triplo', 'F', 2022, `
+Yulimar ROJAS|VEN|15.74
+Maryna BEKH-ROMANCHUK|UKR|15.02
+Shanieka RICKETTS|JAM|14.94
+Tori FRANKLIN|USA|14.86
+Keturah ORJI|USA|14.79
+Leyanis PÉREZ HERNÁNDEZ|CUB|14.70
+Kristiina MÄKELÄ|FIN|14.64
+Thea LAFOND|DMA|14.62
+Kimberly WILLIAMS|JAM|14.62
+Jasmine MOORE|USA|14.57
+Neele ECKHARDT-NOACK|GER|14.53
+Hanna MINENKO|ISR|14.47
+Liadagmis POVEA|CUB|14.45
+Patrícia MAMONA|POR|14.45
+Neja FILIPIČ|SLO|14.42
+Yekaterina KONEVA|RUS|14.42
+Naomi METZGER|GBR|14.37
+Ackelia SMITH|JAM|14.36
+Rouguy DIALLO|FRA|14.32
+Senni SALMINEN|FIN|14.32
+Ana PELETEIRO|ESP|14.30
+Dariya DERKACH|ITA|14.26
+Ivana VULETA|SRB|14.24
+Davisleydi VELAZCO|CUB|14.22
+Ottavia CESTONARO|ITA|14.22
+Fátima DIAME|ESP|14.17
+Tuğba DANIŞMAZ|TUR|14.15
+Dovilė KILTY|LTU|14.14
+Ruth USORO|NGR|14.11
+Natricia HOOPER|GUY|14.10
+Nubia SOARES|BRA|14.10
+Darya NIDBAYKINA|RUS|14.10
+Sharifa DAVRONOVA|UZB|14.04
+Gabriele SANTOS|BRA|14.03
+Viyaleta SKVARTSOVA|BLR|14.02
+Mariya YEFREMOVA|KAZ|14.01
+Gabriela PETROVA|BUL|14.01
+Elena Andreea TALOȘ|ROU|14.01
+Jessie MADUKA|GER|14.00
+Kristin GIERISCH|GER|14.00
+Aina GRIKŠAITĖ|LTU|13.98
+Charisma TAYLOR|BAH|13.96
+Aishwarya BABU SAB|IND|13.94
+Anne-Suzanna FOSTHER-KATTA|FRA|13.93
+Aleksandra NACHEVA|BUL|13.92
+Kira WITTMANN|GER|13.90
+Rūta Kate LASMANE|LAT|13.89
+Deborah ACQUAH|GHA|13.88
+Ting CHEN|CHN|13.87
+Gizem AKGÖZ|TUR|13.86
+`),
+  ...righe('asta', 'M', 2022, `
+Armand DUPLANTIS|SWE|6.21
+Christopher NILSEN|USA|6.05
+KC LIGHTFOOT|USA|5.95
+Thiago BRAZ|BRA|5.95
+Ernest John OBIENA|PHI|5.94
+Menno VLOON|NED|5.91
+Bo Kanda LITA BAEHRE|GER|5.90
+Renaud LAVILLENIE|FRA|5.87
+Oleg ZERNIKEL|GER|5.87
+Pål Haugen LILLEFOSSE|NOR|5.86
+Sondre GUTTORMSEN|NOR|5.86
+Zach MCWHORTER|USA|5.85
+Valentin LAVILLENIE|FRA|5.85
+Ben BROEDERS|BEL|5.85
+Thibaut COLLET|FRA|5.82
+Jacob WOOTEN|USA|5.81
+Matt LUDWIG|USA|5.81
+Emmanouil KARALIS|GRE|5.81
+Rutger KOPPELAAR|NED|5.81
+Kurtis MARSCHALL|AUS|5.81
+Anthony AMMIRATI|FRA|5.81
+Clayton FRITSCH|USA|5.80
+Piotr LISEK|POL|5.80
+Ersu ŞAŞMA|TUR|5.80
+Dmitriy KACHANOV|RUS|5.80
+Alioune SENE|FRA|5.76
+Zachery BRADFORD|USA|5.75
+Timur MORGUNOV|ANA|5.75
+Luke WINDER|USA|5.75
+Harry COPPELL|GBR|5.75
+Torben BLECH|GER|5.75
+Olen Tray OATES|USA|5.75
+Ethan CORMONT|FRA|5.74
+Deakin VOLZ|USA|5.72
+Nate RICHARTZ|USA|5.72
+Simen GUTTORMSEN|NOR|5.72
+Gillian LADWIG|GER|5.72
+Mathieu COLLET|FRA|5.71
+Sam KENDRICKS|USA|5.71
+Seito YAMAMOTO|JPN|5.71
+Austin MILLER|USA|5.71
+Baptiste THIERY|FRA|5.71
+Bangchao DING|CHN|5.71
+Cole WALSH|USA|5.70
+Bokai HUANG|CHN|5.70
+Mikko PAAVOLA|FIN|5.70
+Jie YAO|CHN|5.70
+Audie WYATT|USA|5.68
+Romain GAVILLON|FRA|5.67
+Scott HOUSTON|USA|5.67
+`),
+  ...righe('asta', 'F', 2022, `
+Anzhelika SIDOROVA|ANA|4.91
+Katie NAGEOTTE|USA|4.85
+Sandi MORRIS|USA|4.85
+Wilma MURTO|FIN|4.85
+Polina KNOROZ|ANA|4.81
+Nina KENNEDY|AUS|4.81
+Iryna ZHUK|BLR|4.80
+Tina ŠUTEJ|SLO|4.80
+Emily GROVE|USA|4.75
+Aikaterini STEFANIDI|GRE|4.75
+Roberta BRUNI|ITA|4.72
+Olivia GRUVER|USA|4.71
+Bridget WILLIAMS|USA|4.70
+Alysha NEWMAN|CAN|4.70
+Lene Onsrud RETZIUS|NOR|4.70
+Margot CHEVRIER|FRA|4.70
+Angelica MOSER|SUI|4.66
+Yarisley SILVA|CUB|4.65
+Huiqin XU|CHN|4.65
+Olivia MCTAGGART|NZL|4.65
+Lisa GUNNARSSON|SWE|4.65
+Kristen LELAND|USA|4.65
+Alina MCDONALD|USA|4.65
+Rachel BAXTER|USA|4.62
+Aksana GATAULLINA|RUS|4.61
+Gabriela LEON|USA|4.61
+Iana GLADIICHUK|UKR|4.60
+Jennifer SUHR|USA|4.60
+Holly BRADSHAW|GBR|4.60
+Molly CAUDERY|GBR|4.60
+Amálie ŠVÁBÍKOVÁ|CZE|4.60
+Kristen BROWN|USA|4.60
+Chunge NIU|CHN|4.60
+Ling LI|CHN|4.60
+Ninon CHAPELLE|FRA|4.56
+Amanda FASSOLD|USA|4.55
+Anjuli KNÄSCHE|GER|4.55
+Caroline Bonde HOLM|DEN|4.55
+Marie-Julie BONNIN|FRA|4.55
+Chloe TIMBERG|USA|4.53
+Amanda MOLL|USA|4.51
+Qiaoling CHEN|CHN|4.51
+Elina GIALLURACHIS|FRA|4.51
+Elina LAMPELA|FIN|4.50
+Pascale STÖCKLIN|SUI|4.50
+Nikoleta KYRIAKOPOULOU|GRE|4.50
+Eleni-Klaoudia POLAK|GRE|4.50
+Jacqueline OTCHERE|GER|4.50
+Anicka NEWELL|CAN|4.50
+Yelizaveta BONDARENKO|ANA|4.50
+`),
+  ...righe('peso', 'M', 2022, `
+Joe KOVACS|USA|23.23
+Ryan CROUSER|USA|23.12
+Darlan ROMANI|BRA|22.53
+Tom WALSH|NZL|22.31
+Josh AWOTUNDE|USA|22.29
+Zane WEIR|ITA|21.99
+Tomáš STANĚK|CZE|21.94
+Konrad BUKOWIECKI|POL|21.91
+Jacko GILL|NZL|21.90
+Filip MIHALJEVIĆ|CRO|21.88
+Darrell HILL|USA|21.84
+Nick PONZIO|ITA|21.83
+Armin SINANČEVIĆ|SRB|21.82
+Turner WASHINGTON|USA|21.65
+Adrian PIPERI|USA|21.58
+Daniel MCARTHUR|USA|21.51
+Roger STEEN|USA|21.47
+Mohamed KHALIFA|EGY|21.39
+Maksim AFONIN|RUS|21.32
+Jordan GEIST|USA|21.27
+Chukwuebuka ENEKWECHI|NGR|21.25
+Roman KOKOSHKO|UKR|21.23
+Giorgi MUJARIDZE|GEO|21.17
+Michał HARATYK|POL|21.17
+Leonardo FABBRI|ITA|21.16
+Payton OTTERDAHL|USA|21.14
+Andrew LISKOWITZ|USA|21.08
+Andrei Rares TOADER|ROU|21.07
+Asmir KOLAŠINAC|SRB|21.06
+Mesud PEZER|BIH|21.06
+Uziel MUÑOZ|MEX|21.06
+Bob BERTEMES|LUX|20.94
+Aleh TAMASHEVICH|BLR|20.93
+Scott LINCOLN|GBR|20.92
+Marcus THOMSEN|NOR|20.89
+Issac ODUGBESAN|NGR|20.85
+Alperen KARAHAN|TUR|20.81
+Welington MORAIS|BRA|20.78
+Tajinderpal Singh TOOR|IND|20.75
+Abdelrahman MAHMOUD|BRN|20.74
+Wictor PETERSSON|SWE|20.73
+Dzmitry KARPUK|BLR|20.68
+Francisco BELO|POR|20.64
+Jason VAN ROOYEN|RSA|20.64
+Aleksandr LESNOY|ANA|20.61
+Kyle BLIGNAUT|RSA|20.60
+Jakub SZYSZKOWSKI|POL|20.53
+Willian DOURADO|BRA|20.52
+John MEYER|USA|20.50
+Eric FAVORS|IRL|20.50
+`),
+  ...righe('peso', 'F', 2022, `
+Chase EALY|USA|20.51
+Auriol DONGMO|POR|20.43
+Lijiao GONG|CHN|20.39
+Jiayuan SONG|CHN|20.38
+Sarah MITTON|CAN|20.33
+Jessica SCHILDER|NED|20.24
+Maggie EWEN|USA|19.79
+Adelaide AQUILLA|USA|19.64
+Danniel THOMAS-DODD|JAM|19.53
+Maddison-Lee WESCHE|NZL|19.50
+Fanny ROOS|SWE|19.42
+Jessica WOODARD|USA|19.40
+Jessica RAMSEY|USA|19.38
+Aliona DUBITSKAYA|BLR|19.38
+Jorinde VAN KLINKEN|NED|19.08
+Sara GAMBETTA|GER|19.05
+Raven SAUNDERS|USA|18.95
+Katharina MAISCH|GER|18.88
+Sophie MCKINNA|GBR|18.82
+Linru ZHANG|CHN|18.67
+Jessica INCHUDE|POR|18.67
+Julia RITTER|GER|18.60
+Axelina JOHANSSON|SWE|18.57
+Christina SCHWANITZ|GER|18.49
+Ana Caroline SILVA|BRA|18.46
+Latavia MAINES|USA|18.43
+Anita MÁRTON|HUN|18.34
+Benthe KÖNIG|NED|18.21
+Snezhana TROFIMETS|ANA|18.21
+Amelia STRICKLER|GBR|18.18
+Josephine SCHAEFER|USA|18.14
+Yemisi OGUNLEYE|GER|18.14
+Rachel FATHERLY|USA|18.13
+Dimitriana BEZEDE|MDA|18.12
+Manpreet KAUR|IND|18.06
+Khayla DAWSON|USA|18.05
+Lloydricia CAMERON|JAM|18.01
+María Belén TOIMIL|ESP|17.98
+Divine OLADIPO|GBR|17.97
+Maria DE AVIZ|BRA|17.97
+Emel DERELI|TUR|17.95
+Olha GOLODNA|UKR|17.92
+Markéta ČERVENKOVÁ|CZE|17.90
+Payden MONTANA|USA|17.88
+Yue MA|CHN|17.87
+Deenia MCMILLER|USA|17.85
+Portious WARREN|TTO|17.84
+Jaida ROSS|USA|17.83
+Kayli JOHNSON|USA|17.80
+Livia AVANCINI|BRA|17.74
+`),
+  ...righe('disco', 'M', 2022, `
+Daniel STÅHL|SWE|71.47
+Kristjan ČEH|SLO|71.27
+Simon PETTERSSON|SWE|70.42
+Mykolas ALEKNA|LTU|69.81
+Andrius GUDŽIUS|LTU|69.39
+Lukas WEIßHAIDINGER|AUT|69.11
+Sam MATTIS|USA|68.69
+Matthew DENNY|AUS|67.26
+Lawrence OKOYE|GBR|67.14
+Claudio ROMERO|CHI|67.02
+Andrew EVANS|USA|66.74
+Alex ROSE|SAM|66.67
+Traves SMIKLE|JAM|66.60
+Henrik JANSSEN|GER|66.25
+Torben BRANDT|GER|66.18
+Brian WILLIAMS|USA|66.14
+Fedrick DACRES|JAM|65.98
+Lolassonn DJOUHAN|FRA|65.86
+Martin WIERIG|GER|65.73
+Juan CAICEDO|ECU|65.57
+Alin Alexandru FIRFIRICĂ|ROU|65.57
+Apostolos PARELLIS|CYP|65.54
+Ralford MULLINGS|JAM|65.39
+Guðni Valur GUÐNASON|ISL|65.27
+Mario Alberto DÍAZ|CUB|65.21
+Roje STONA|JAM|65.11
+Nicholas PERCY|GBR|65.00
+Aleksey KHUDYAKOV|RUS|64.71
+Mykyta NESTERENKO|UKR|64.68
+Lucas NERVI|CHI|64.55
+Philip MILANOV|BEL|64.48
+Marcus GUSTAVESON|USA|64.46
+Victor HOGAN|RSA|64.43
+Josh SYROTCHEN|USA|64.32
+Danijel FURTULA|MNE|64.31
+Sven Martin SKAGESTAD|NOR|64.28
+Niklas ARRHENIUS|USA|64.24
+Róbert SZIKSZAI|HUN|64.19
+Oskar STACHNIK|POL|64.06
+Robert URBANEK|POL|64.05
+Dallin SHURTS|USA|64.02
+Zane DUQUEMIN|GBR|63.76
+Yauheni BAHUTSKI|BLR|63.68
+Marek BÁRTA|CZE|63.65
+Mauricio ORTEGA|COL|63.59
+David WROBEL|GER|63.56
+Henning PRÜFER|GER|63.47
+Chad WRIGHT|JAM|63.30
+Samuel WELSH|USA|63.26
+János HUSZÁK|HUN|63.25
+`),
+  ...righe('disco', 'F', 2022, `
+Valarie ALLMAN|USA|71.46
+Bin FENG|CHN|69.12
+Sandra PERKOVIĆ|CRO|68.46
+Kristin PUDENZ|GER|67.87
+Jorinde VAN KLINKEN|NED|65.66
+Rachel DINCOFF|USA|65.46
+Yaimé PÉREZ|CUB|65.32
+Liliana CÁ|POR|65.21
+Claudine VITA|GER|65.20
+Shanice CRAFT|GER|65.10
+Marija TOLJ|CRO|64.71
+Marike STEINACKER|GER|64.55
+Laulauga TAUSAGA|USA|64.49
+Julia HARTING|GER|64.34
+Shadae LAWRENCE|JAM|63.94
+Daisy OSAKUE|ITA|63.24
+Izabela DA SILVA|BRA|63.04
+Silinda MORÁLES|CUB|62.64
+Melina ROBERT-MICHON|FRA|62.61
+Chrysoula ANAGNOSTOPOULOU|GRE|62.40
+Veronica FRALEY|USA|62.30
+Irina RODRIGUES|POR|62.08
+Andressa DE MORAIS|BRA|61.97
+Özlem BECEREK|TUR|61.96
+Denia CABALLERO|CUB|61.86
+Jade LALLY|GBR|61.78
+Yang CHEN|CHN|61.75
+Chioma ONYEKWERE-LYONS|NGR|61.70
+Lisa Brix PEDERSEN|DEN|61.29
+Nadine MÜLLER|GER|61.29
+Violetta IGNATYEVA|RUS|61.13
+Fernanda MARTINS|BRA|61.02
+Daria ZABAWSKA|POL|60.90
+Alexandra EMILIANOV|MDA|60.67
+Salla SIPPONEN|FIN|60.58
+Antonia KINZEL|GER|60.50
+Vanessa KAMGA|SWE|60.33
+Yuliya MALTSEVA|RUS|60.24
+Karen GALLARDO|CHI|59.99
+Ieva ZARANKAITĖ|LTU|59.92
+Karolina URBAN|POL|59.81
+Kirsty LAW|GBR|59.64
+Seasons USUAL|USA|59.49
+Dragana TOMAŠEVIĆ|SRB|59.44
+Trinity TUTTI|CAN|59.39
+Julia RITTER|GER|59.30
+Lotta FLATUM|NOR|59.11
+Ashley ANUMBA|NGR|59.06
+Jayden ULRICH|USA|59.01
+Stefania STRUMILLO|ITA|58.86
+`),
+  ...righe('giavellotto', 'M', 2022, `
+Anderson PETERS|GRN|93.07
+Jakub VADLEJCH|CZE|90.88
+Arshad NADEEM|PAK|90.18
+Neeraj CHOPRA|IND|89.94
+Oliver HELANDER|FIN|89.83
+Julian WEBER|GER|89.54
+Keshorn WALCOTT|TTO|89.07
+Curtis THOMPSON|USA|87.70
+Aliaksei KATKAVETS|BLR|87.53
+Andreas HOFMANN|GER|87.32
+Lassi ETELÄTALO|FIN|86.44
+Vítězslav VESELÝ|CZE|85.97
+Julius YEGO|KEN|85.70
+Johannes VETTER|GER|85.64
+Leandro RAMOS|POR|84.78
+Andrian MARDARE|MDA|84.77
+D.P. MANU|IND|84.35
+Artur FELFNER|UKR|84.32
+Toni KUUSELA|FIN|84.01
+Ihab ABDELRAHMAN|EGY|83.79
+Gatis ČAKŠS|LAT|83.66
+Patriks GAILUMS|LAT|83.65
+Boris BEZDOLNIY|RUS|83.46
+Manu QUIJERA|ESP|83.28
+Alexandru Mihăiță NOVAC|ROU|83.01
+Ryohei ARAI|JPN|82.99
+Ethan DABBS|USA|82.92
+Toni KERÄNEN|FIN|82.89
+Kim AMB|SWE|82.86
+Tim GLOVER|USA|82.81
+Rohit YADAV|IND|82.54
+Roderick Genki DEAN|JPN|82.34
+Sumedha RANASINGHE|SRI|82.18
+Yash Vir SINGH|IND|82.13
+Cameron MCENTYRE|AUS|81.96
+Vikrant MALIK|IND|81.82
+David CARREON|MEX|81.71
+Douw SMIT|RSA|81.47
+Chinecherem NNAMDI|NGR|81.22
+Emin ÖNCEL|TUR|81.20
+Marc Anthony MINICHELLO|USA|81.17
+Pedro Henrique RODRIGUES|BRA|81.00
+Rolands ŠTROBINDERS|LAT|80.91
+Teo TAKALA|FIN|80.85
+Luiz Mauricio DA SILVA|BRA|80.79
+Zach HOLLAND|USA|80.61
+Yuta SAKIYAMA|JPN|80.51
+Maurice VOIGT|GER|80.46
+Marcin KRUKOWSKI|POL|80.44
+Kenji OGURA|JPN|80.25
+`),
+  ...righe('giavellotto', 'F', 2022, `
+Kara WINGER|USA|68.11
+Kelsey-Lee BARBER|AUS|66.91
+Tatsiana KHALADOVICH|BLR|66.19
+Elina TZENGKO|GRE|65.81
+Maggie MALONE|USA|65.73
+Haruka KITAGUCHI|JPN|65.68
+Christin HUSSONG|GER|64.87
+Ariana INCE|USA|64.38
+Mackenzie LITTLE|AUS|64.27
+Yulenmis AGUILAR|CUB|64.17
+Shiying LIU|CHN|63.86
+Annu RANI|IND|63.82
+Liveta JASIŪNAITĖ|LTU|63.80
+Vera MARKARYAN|RUS|63.75
+Adriana VILAGOŠ|SRB|63.52
+Elizabeth GLEADLE|CAN|63.33
+Flor Denis RUIZ HURTADO|COL|62.97
+Līna MŪZE|LAT|62.88
+Nikola OGRODNÍKOVÁ|CZE|62.80
+Sara KOLAK|CRO|62.62
+Jucilene Sales DE LIMA|BRA|62.42
+Tori PEETERS|NZL|62.40
+Coralys ORTIZ|PUR|62.31
+Barbora ŠPOTÁKOVÁ|CZE|62.29
+Avione Larie ALLGOOD|USA|62.13
+Victoria HUDSON|AUT|61.90
+Viktoryia BAHUTSKAYA|BLR|61.65
+Jo-Ane VAN DYK|RSA|61.61
+Momone UEDA|JPN|61.20
+Juleisy ANGULO|ECU|61.10
+Annika Marie FUCHS|GER|61.06
+Marija VUČENOVIĆ|SRB|61.05
+Lea WIPPER|GER|60.98
+Sae TAKEMOTO|JPN|60.84
+Marina SAITO|JPN|60.81
+Anete KOCIŅA|LAT|60.73
+Réka SZILÁGYI|HUN|60.57
+Madara PALAMEIKA|LAT|60.56
+Ashton RINER|USA|60.36
+Sanne ERKKOLA|FIN|60.18
+Yiselena BALLAR ROJAS|CUB|60.07
+Madison WILTROUT|USA|60.03
+Anouk VETTER|NED|59.81
+Lijuan GE|CHN|59.58
+Petra ANDREJSKOVÁ|CZE|59.57
+Reina KIMURA|JPN|59.49
+Aliaksandra KONSHYNA|BLR|59.45
+Dilhani LEKAMGE|SRI|59.41
+Mahiro OSA|JPN|59.37
+Martina RATEJ|SLO|59.36
+`),
+  ...righe('martello', 'M', 2022, `
+Wojciech NOWICKI|POL|82.00
+Paweł FAJDEK|POL|81.98
+Valeriy PRONKIN|ANA|81.12
+Bence HALÁSZ|HUN|80.92
+Eivind HENRIKSEN|NOR|80.87
+Quentin BIGOT|FRA|80.55
+Daniel HAUGH|USA|80.18
+Andrey ROMANOV|RUS|79.99
+Rudy WINKLER|USA|79.11
+Mykhaylo KOKHAN|UKR|78.83
+Diego DEL REAL|MEX|78.26
+Christos FRANTZESKAKIS|GRE|78.20
+Yury VASILCHANKA|BLR|78.17
+Aliaksandr SHYMANOVICH|BLR|78.06
+Serghei MARGHIEV|MDA|77.90
+Gabriel KEHR|CHI|77.66
+Adam KEENAN|CAN|77.54
+Sean DONNELLY|USA|77.50
+Yann CHAUSSINAND|FRA|77.34
+Michail ANASTASAKIS|GRE|77.30
+Nick MILLER|GBR|77.29
+Alex YOUNG|USA|77.02
+Mykhailo HAVRYLIUK|UKR|77.02
+Marcin WROTYŃSKI|POL|77.01
+Ragnar CARLSSON|SWE|77.00
+Javier CIENFUEGOS|ESP|76.79
+Ethan KATZBERG|CAN|76.36
+Hilmar Örn JÓNSSON|ISL|76.33
+Denis LUKYANOV|RUS|76.31
+Humberto MANSILLA|CHI|76.22
+Morgan SHIGO|USA|76.10
+Rowan HAMILTON|CAN|75.98
+Dániel RÁBA|HUN|75.97
+Özkan BALTACI|TUR|75.72
+Daniel ROBERTS|USA|75.70
+Merlin HUMMEL|GER|75.66
+Marco LINGUA|ITA|75.56
+Mostafa ELGAMEL|EGY|75.49
+Ilya TERENTEV|RUS|75.38
+Henri LIIPOLA|FIN|75.32
+Yasmani FERNÁNDEZ|CUB|75.30
+Tristan SCHWANDKE|GER|75.25
+Denzel COMENENTIA|NED|75.21
+Jean Baptiste BRUXELLE|FRA|75.20
+Israel OLOYEDE|USA|75.10
+Aaron KANGAS|FIN|75.03
+Tuomas SEPPÄNEN|FIN|74.97
+Adam KELLY|EST|74.95
+Thomas MARDAL|NOR|74.81
+Qi WANG|CHN|74.78
+`),
+  ...righe('martello', 'F', 2022, `
+Brooke ANDERSEN|USA|79.02
+Anita WŁODARCZYK|POL|78.06
+Janee' KASSANAVOID|USA|78.00
+Camryn ROGERS|CAN|77.67
+Sara FANTINI|ITA|75.77
+Malwina KOPRON|POL|75.08
+Alyssa WILSON|USA|74.78
+Anastasiya MASLOVA|BLR|74.71
+Hanna SKYDAN|AZE|74.57
+Na LUO|CHN|74.47
+Krista TERVO|FIN|74.40
+Katrine Koch JACOBSEN|DEN|74.22
+Annette Nneka ECHIKUNWOKE|USA|73.76
+Lauren BRUCE|NZL|73.34
+Sofiya PALKINA|ANA|73.22
+Bianca Florentina GHELBER|ROU|73.15
+Jillian WEIR|CAN|73.12
+DeAnna PRICE|USA|73.07
+Jie ZHAO|CHN|72.93
+Maggie EWEN|USA|72.70
+Zalina MARGHIEVA|MDA|72.62
+Julia RATCLIFFE|NZL|72.33
+Silja KOSONEN|FIN|72.22
+Samantha BORUTTA|GER|72.14
+Ewa RÓŻAŃSKA|POL|72.12
+Beatrice Nedberge LLANO|NOR|72.10
+Laura REDONDO|ESP|72.00
+Alexandra TAVERNIER|FRA|71.97
+Xinying XU|CHN|71.97
+Janeah STEWART|USA|71.62
+Réka GYURÁTZ|HUN|71.57
+Autavia FLUKER|USA|71.54
+Stamatia Alexandra SCARVELIS|GRE|71.43
+Jiangyan LI|CHN|71.22
+Yelizaveta TSAREVA|RUS|71.15
+Iryna KLYMETS|UKR|71.10
+Li JI|CHN|71.03
+Sara KILLINEN|FIN|71.02
+Lara BOMAN|USA|71.00
+Gwen BERRY|USA|70.98
+Grete AHLBERG|SWE|70.87
+Rose LOGA|FRA|70.81
+Anna PURCHASE|GBR|70.63
+Charlotte PAYNE|GBR|70.59
+Shelby MORAN|USA|70.58
+Nicole BRADLEY|NZL|70.45
+Suvi KOSKINEN|FIN|70.39
+Alena SOBALEVA|BLR|70.34
+Weilu HUANG|CHN|70.09
+Jillian SHIPPEE|USA|70.07
+`),
+]
