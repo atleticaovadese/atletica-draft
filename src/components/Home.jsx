@@ -42,7 +42,7 @@ export default function Home({ records, onGioca }) {
     <div className="fade-in max-w-xl mx-auto text-center pt-10">
       <div className="text-6xl mb-4">🏃‍♂️🏅</div>
       <h1 className="text-5xl font-black tracking-tight text-white">
-        Atletica <span className="text-cyan-400">Draft</span>
+        Track &amp; Field <span className="text-cyan-400">Draft</span>
       </h1>
       <p className="mt-4 text-slate-400 leading-relaxed">
         Drafta atleti leggendari, uno per ogni evento sorteggiato. Falli gareggiare contro
