@@ -1,14 +1,42 @@
 import { useState } from 'react'
+import { CONFIG } from '../config.js'
+
+const TIPI = [
+  { id: 'normale', label: 'Normale' },
+  { id: 'mondiale', label: 'Mondiale' },
+]
+const GENERI = [
+  { id: 'M', label: 'Uomini' },
+  { id: 'F', label: 'Donne' },
+  { id: 'misto', label: 'Misto' },
+]
+
+function Selettore({ opzioni, valore, onChange }) {
+  return (
+    <div className="inline-flex rounded-xl bg-slate-800 p-1 gap-1">
+      {opzioni.map((o) => (
+        <button
+          key={o.id}
+          onClick={() => onChange(o.id)}
+          className={[
+            'px-5 py-2 rounded-lg text-sm font-semibold transition',
+            valore === o.id ? 'bg-cyan-400 text-slate-900' : 'text-slate-300 hover:bg-slate-700',
+          ].join(' ')}
+        >
+          {o.label}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 export default function Home({ records, onGioca }) {
-  const [modalita, setModalita] = useState('misto')
-  const opzioni = [
-    { id: 'M', label: 'Uomini' },
-    { id: 'F', label: 'Donne' },
-    { id: 'misto', label: 'Misto' },
-  ]
-  const recordModalita = records?.[modalita] ?? 0
-  const etichettaModalita = opzioni.find((o) => o.id === modalita)?.label ?? ''
+  const [tipo, setTipo] = useState('normale')
+  const [genere, setGenere] = useState('misto')
+
+  const record = records?.[tipo]?.[genere] ?? 0
+  const etichettaTipo = TIPI.find((t) => t.id === tipo)?.label ?? ''
+  const etichettaGenere = GENERI.find((g) => g.id === genere)?.label ?? ''
 
   return (
     <div className="fade-in max-w-xl mx-auto text-center pt-10">
@@ -23,32 +51,30 @@ export default function Home({ records, onGioca }) {
       </p>
 
       <div className="mt-8">
+        <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">Tipo di partita</div>
+        <Selettore opzioni={TIPI} valore={tipo} onChange={setTipo} />
+        <p className="mt-2 text-xs text-slate-500 h-4">
+          {tipo === 'mondiale'
+            ? `Un anno a caso · ${CONFIG.EVENTI_PER_PARTITA_MONDIALE} discipline · tutte le carte di quell'anno`
+            : `${CONFIG.EVENTI_PER_PARTITA} discipline · atleti di ogni epoca`}
+        </p>
+      </div>
+
+      <div className="mt-5">
         <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">Modalità</div>
-        <div className="inline-flex rounded-xl bg-slate-800 p-1 gap-1">
-          {opzioni.map((o) => (
-            <button
-              key={o.id}
-              onClick={() => setModalita(o.id)}
-              className={[
-                'px-5 py-2 rounded-lg text-sm font-semibold transition',
-                modalita === o.id ? 'bg-cyan-400 text-slate-900' : 'text-slate-300 hover:bg-slate-700',
-              ].join(' ')}
-            >
-              {o.label}
-            </button>
-          ))}
-        </div>
+        <Selettore opzioni={GENERI} valore={genere} onChange={setGenere} />
       </div>
 
       <button
-        onClick={() => onGioca(modalita)}
+        onClick={() => onGioca(tipo, genere)}
         className="mt-8 w-full sm:w-auto px-12 py-4 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-900 text-lg font-black shadow-xl hover:scale-105 transition"
       >
         ▶ Gioca
       </button>
 
       <div className="mt-8 text-slate-400">
-        🏆 Record {etichettaModalita}: <span className="font-bold text-amber-300">{recordModalita}</span> punti
+        🏆 Record {etichettaTipo} · {etichettaGenere}:{' '}
+        <span className="font-bold text-amber-300">{record}</span> punti
       </div>
     </div>
   )

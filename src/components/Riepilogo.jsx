@@ -1,9 +1,14 @@
 import { CONFIG } from '../config.js'
 
-export default function Riepilogo({ risultati, totale, record, nuovoRecord, onRigioca }) {
+export default function Riepilogo({ risultati, totale, record, anno, nuovoRecord, onRigioca }) {
   return (
     <div className="fade-in max-w-2xl mx-auto text-center">
       <div className="pop">
+        {anno && (
+          <div className="inline-block mb-3 rounded-full bg-amber-400/20 text-amber-300 text-sm font-bold px-4 py-1">
+            🌍 Mondiale {anno}
+          </div>
+        )}
         {nuovoRecord && <div className="text-amber-300 font-bold mb-2 text-lg">🎉 Nuovo record!</div>}
         <div className="text-slate-400">Punteggio finale</div>
         <div className="text-7xl font-black text-cyan-300 tabular-nums my-2">{totale}</div>

@@ -16,6 +16,8 @@ import {
   carteDraft,
   simulaEvento,
   eventiPerModalita,
+  anniMondiale,
+  sorteggiaAnnoMondiale,
   fasciaCarta,
   indizioDraft,
   formatMisura,
@@ -207,6 +209,46 @@ describe('simulaEvento', () => {
       expect(r.piazzamento).toBe(CONFIG.DIMENSIONE_BATTERIA)
       expect(r.punti).toBe(1) // bordo: ultimo = 1 punto
     }
+  })
+})
+
+describe('Mondiale (carte ristrette a un anno)', () => {
+  it('anniMondiale restituisce anni con abbastanza eventi, in ordine crescente', () => {
+    const anni = anniMondiale('misto')
+    expect(anni.length).toBeGreaterThan(0)
+    expect(anni).toEqual([...anni].sort((a, b) => a - b))
+    // ogni anno idoneo ha almeno EVENTI_PER_PARTITA_MONDIALE eventi giocabili
+    for (const a of anni) {
+      expect(eventiPerModalita('misto', a).length).toBeGreaterThanOrEqual(
+        CONFIG.EVENTI_PER_PARTITA_MONDIALE,
+      )
+    }
+    // le stagioni recenti complete devono essere idonee
+    for (const a of [2018, 2021, 2025]) expect(anni).toContain(a)
+  })
+
+  it('sorteggiaAnnoMondiale ritorna un anno idoneo', () => {
+    const idonei = anniMondiale('M')
+    for (let i = 0; i < 20; i++) {
+      expect(idonei).toContain(sorteggiaAnnoMondiale('M'))
+    }
+  })
+
+  it('carteDraft con anno pesca solo carte di quell\'anno', () => {
+    const carte = carteDraft('100m', 'M', 2021)
+    expect(carte).toHaveLength(CONFIG.CARTE_NEL_DRAFT)
+    carte.forEach((c) => {
+      expect(c.anno).toBe(2021)
+      expect(c.evento).toBe('100m')
+      expect(c.genere).toBe('M')
+    })
+  })
+
+  it('in Mondiale anche la batteria è tutta dello stesso anno', () => {
+    const carta = carteDraft('200m', 'F', 2022)[0]
+    const { batteria } = simulaEvento(ev('200m'), 'F', carta, 2022)
+    expect(batteria).toHaveLength(CONFIG.DIMENSIONE_BATTERIA)
+    batteria.forEach((x) => expect(x.anno).toBe(2022))
   })
 })
 

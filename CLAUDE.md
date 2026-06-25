@@ -58,6 +58,11 @@ Regole:
   (sorteggi): isolala in `mescola`/`sorteggia*` così il resto è facile da testare.
 - **Tutte le costanti regolabili stanno in `config.js`.** Se aggiungi un numero "magico"
   (dimensione batteria, carte nel draft, formula punti...), mettilo lì.
+- **Modalità di gioco**: due assi indipendenti scelti nella Home. Tipo = `normale` (5 eventi,
+  atleti di ogni epoca) o `mondiale` (`sorteggiaAnnoMondiale` → un anno; 10 eventi; carte E
+  avversari di quell'anno, vedi il param opzionale `anno` di `poolCarte`/`carteDraft`/`simulaEvento`).
+  Genere = `M`/`F`/`misto`. I record (`persistenza.js`) sono separati per tipo×genere:
+  `{ normale:{M,F,misto}, mondiale:{M,F,misto} }`, con migrazione dai formati v1/v2.
 - **Indizi nel draft** (`CONFIG.INDIZI_DRAFT`): la misura resta sempre nascosta, ma le carte
   possono mostrare un indizio — `'off'`, `'decennio'`, o `'fascia'` (élite/buono/outsider
   calcolata sul pool dell'evento). La logica è in `indizioDraft`/`fasciaCarta` (`logic/gioco.js`,

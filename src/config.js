@@ -2,7 +2,8 @@
 // COSTANTI CONFIGURABILI — modifica qui le regole del gioco
 // =========================================================================
 export const CONFIG = {
-  EVENTI_PER_PARTITA: 5,   // quanti eventi si sorteggiano a ogni partita
+  EVENTI_PER_PARTITA: 5,   // eventi sorteggiati in una partita Normale
+  EVENTI_PER_PARTITA_MONDIALE: 10, // eventi sorteggiati in una partita Mondiale (un solo anno)
   CARTE_NEL_DRAFT: 12,     // quante carte vengono mostrate per ogni draft
   DIMENSIONE_BATTERIA: 8,  // numero di atleti in ogni batteria (giocatore + avversari)
   // Punti = DIMENSIONE_BATTERIA - piazzamento + 1  (1° = 8 punti ... 8° = 1 punto)

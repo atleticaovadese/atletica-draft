@@ -1,29 +1,41 @@
 // =========================================================================
-// PERSISTENZA — record migliore su localStorage, separato per modalità
-// Forma salvata: { M: number, F: number, misto: number }
+// PERSISTENZA — record migliore su localStorage, separato per tipo e modalità
+// Forma salvata: { normale: {M,F,misto}, mondiale: {M,F,misto} }
 // =========================================================================
 const RECORD_KEY = 'atleticaDraft.record'
 const MODI = ['M', 'F', 'misto']
+const TIPI = ['normale', 'mondiale']
 
-const vuoto = () => ({ M: 0, F: 0, misto: 0 })
+const vuoto = () => ({
+  normale: { M: 0, F: 0, misto: 0 },
+  mondiale: { M: 0, F: 0, misto: 0 },
+})
 
-// Legge i record per tutte le modalità. Migra il vecchio formato (un numero
-// secco) assegnandolo alla modalità "misto" (quella predefinita).
+const intero = (v) => {
+  const n = parseInt(v, 10)
+  return Number.isFinite(n) && n > 0 ? n : 0
+}
+
+// Legge i record. Migra i formati precedenti:
+//  - numero secco (v1)            → normale.misto
+//  - { M, F, misto } (v2)         → normale.{M,F,misto}
+//  - { normale, mondiale } (v3)   → usato così com'è
 export function leggiRecords() {
   try {
     const raw = localStorage.getItem(RECORD_KEY)
     if (!raw) return vuoto()
     const t = raw.trim()
-    // formato vecchio: stringa numerica → migra a "misto"
     if (!t.startsWith('{')) {
-      const n = parseInt(t, 10)
-      return { ...vuoto(), misto: Number.isFinite(n) && n > 0 ? n : 0 }
+      const out = vuoto()
+      out.normale.misto = intero(t)
+      return out
     }
     const obj = JSON.parse(t)
     const out = vuoto()
-    for (const m of MODI) {
-      const v = parseInt(obj?.[m], 10)
-      if (Number.isFinite(v) && v > 0) out[m] = v
+    if (obj && (obj.normale || obj.mondiale)) {
+      for (const tipo of TIPI) for (const m of MODI) out[tipo][m] = intero(obj?.[tipo]?.[m])
+    } else {
+      for (const m of MODI) out.normale[m] = intero(obj?.[m])
     }
     return out
   } catch {

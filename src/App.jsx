@@ -3,6 +3,7 @@ import { CONFIG } from './config.js'
 import {
   sorteggiaEventi,
   eventiPerModalita,
+  sorteggiaAnnoMondiale,
   generePerEvento,
   carteDraft,
   simulaEvento,
@@ -15,8 +16,10 @@ import Riepilogo from './components/Riepilogo.jsx'
 
 export default function App() {
   const [fase, setFase] = useState('home') // home | draft | risultato | riepilogo
-  const [records, setRecords] = useState(leggiRecords()) // { M, F, misto }
-  const [modalita, setModalita] = useState('misto') // modalità della partita in corso
+  const [records, setRecords] = useState(leggiRecords()) // { normale:{M,F,misto}, mondiale:{...} }
+  const [tipo, setTipo] = useState('normale') // 'normale' | 'mondiale'
+  const [modalita, setModalita] = useState('misto') // genere della partita in corso
+  const [anno, setAnno] = useState(null) // anno sorteggiato (solo Mondiale)
   const [nuovoRecord, setNuovoRecord] = useState(false)
 
   const [piano, setPiano] = useState([]) // [{ evento, genere }] x EVENTI_PER_PARTITA
@@ -26,18 +29,24 @@ export default function App() {
   const [risultati, setRisultati] = useState([])
   const [indiceRis, setIndiceRis] = useState(0)
 
-  function iniziaPartita(mod) {
-    setModalita(mod)
-    const disponibili = eventiPerModalita(mod)
-    const n = Math.min(CONFIG.EVENTI_PER_PARTITA, disponibili.length)
+  function iniziaPartita(tipoPartita, mod) {
+    // In Mondiale: un anno sorteggiato + 10 eventi, tutte le carte di quell'anno.
+    const annoMondiale = tipoPartita === 'mondiale' ? sorteggiaAnnoMondiale(mod) : null
+    const maxEventi =
+      tipoPartita === 'mondiale' ? CONFIG.EVENTI_PER_PARTITA_MONDIALE : CONFIG.EVENTI_PER_PARTITA
+    const disponibili = eventiPerModalita(mod, annoMondiale)
+    const n = Math.min(maxEventi, disponibili.length)
     const eventi = sorteggiaEventi(n, disponibili)
     const nuovoPiano = eventi.map((ev) => ({ evento: ev, genere: generePerEvento(mod) }))
+    setTipo(tipoPartita)
+    setModalita(mod)
+    setAnno(annoMondiale)
     setPiano(nuovoPiano)
     setIndiceDraft(0)
     setScelte([])
     setRisultati([])
     setNuovoRecord(false)
-    setCarteAttuali(carteDraft(nuovoPiano[0].evento.id, nuovoPiano[0].genere))
+    setCarteAttuali(carteDraft(nuovoPiano[0].evento.id, nuovoPiano[0].genere, annoMondiale))
     setFase('draft')
   }
 
@@ -48,16 +57,16 @@ export default function App() {
     if (prossimo < piano.length) {
       setScelte(nuoveScelte)
       setIndiceDraft(prossimo)
-      setCarteAttuali(carteDraft(piano[prossimo].evento.id, piano[prossimo].genere))
+      setCarteAttuali(carteDraft(piano[prossimo].evento.id, piano[prossimo].genere, anno))
     } else {
-      // Draft completato → simula tutti gli eventi
-      const ris = piano.map((p, i) => simulaEvento(p.evento, p.genere, nuoveScelte[i]))
+      // Draft completato → simula tutti gli eventi (avversari dell'anno in Mondiale)
+      const ris = piano.map((p, i) => simulaEvento(p.evento, p.genere, nuoveScelte[i], anno))
       const totale = ris.reduce((s, r) => s + r.punti, 0)
       setScelte(nuoveScelte)
       setRisultati(ris)
       setIndiceRis(0)
-      if (totale > (records[modalita] || 0)) {
-        const nuovi = { ...records, [modalita]: totale }
+      if (totale > (records[tipo]?.[modalita] || 0)) {
+        const nuovi = { ...records, [tipo]: { ...records[tipo], [modalita]: totale } }
         setRecords(nuovi)
         salvaRecords(nuovi)
         setNuovoRecord(true)
@@ -94,6 +103,7 @@ export default function App() {
             indice={indiceDraft}
             totale={piano.length}
             carte={carteAttuali}
+            anno={anno}
             onScegli={scegliCarta}
           />
         )}
@@ -111,7 +121,8 @@ export default function App() {
           <Riepilogo
             risultati={risultati}
             totale={totaleFinale}
-            record={records[modalita] || 0}
+            record={records[tipo]?.[modalita] || 0}
+            anno={anno}
             nuovoRecord={nuovoRecord}
             onRigioca={() => setFase('home')}
           />
