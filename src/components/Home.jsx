@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { CONFIG } from '../config.js'
 
 const TIPI = [
-  { id: 'normale', label: 'Normale' },
+  { id: 'meeting', label: 'Meeting' },
   { id: 'mondiale', label: 'Mondiale' },
 ]
 const GENERI = [
@@ -31,7 +31,7 @@ function Selettore({ opzioni, valore, onChange }) {
 }
 
 export default function Home({ records, onGioca }) {
-  const [tipo, setTipo] = useState('normale')
+  const [tipo, setTipo] = useState('meeting')
   const [genere, setGenere] = useState('misto')
 
   const record = records?.[tipo]?.[genere] ?? 0

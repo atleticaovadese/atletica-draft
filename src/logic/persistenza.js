@@ -1,13 +1,13 @@
 // =========================================================================
 // PERSISTENZA — record migliore su localStorage, separato per tipo e modalità
-// Forma salvata: { normale: {M,F,misto}, mondiale: {M,F,misto} }
+// Forma salvata: { meeting: {M,F,misto}, mondiale: {M,F,misto} }
 // =========================================================================
 const RECORD_KEY = 'atleticaDraft.record'
 const MODI = ['M', 'F', 'misto']
-const TIPI = ['normale', 'mondiale']
+const TIPI = ['meeting', 'mondiale']
 
 const vuoto = () => ({
-  normale: { M: 0, F: 0, misto: 0 },
+  meeting: { M: 0, F: 0, misto: 0 },
   mondiale: { M: 0, F: 0, misto: 0 },
 })
 
@@ -17,9 +17,9 @@ const intero = (v) => {
 }
 
 // Legge i record. Migra i formati precedenti:
-//  - numero secco (v1)            → normale.misto
-//  - { M, F, misto } (v2)         → normale.{M,F,misto}
-//  - { normale, mondiale } (v3)   → usato così com'è
+//  - numero secco (v1)                  → meeting.misto
+//  - { M, F, misto } (v2)               → meeting.{M,F,misto}
+//  - { normale|meeting, mondiale } (v3) → usato così com'è (normale → meeting)
 export function leggiRecords() {
   try {
     const raw = localStorage.getItem(RECORD_KEY)
@@ -27,15 +27,16 @@ export function leggiRecords() {
     const t = raw.trim()
     if (!t.startsWith('{')) {
       const out = vuoto()
-      out.normale.misto = intero(t)
+      out.meeting.misto = intero(t)
       return out
     }
     const obj = JSON.parse(t)
     const out = vuoto()
-    if (obj && (obj.normale || obj.mondiale)) {
-      for (const tipo of TIPI) for (const m of MODI) out[tipo][m] = intero(obj?.[tipo]?.[m])
+    if (obj && (obj.meeting || obj.normale || obj.mondiale)) {
+      const src = { meeting: obj.meeting ?? obj.normale, mondiale: obj.mondiale }
+      for (const tipo of TIPI) for (const m of MODI) out[tipo][m] = intero(src?.[tipo]?.[m])
     } else {
-      for (const m of MODI) out.normale[m] = intero(obj?.[m])
+      for (const m of MODI) out.meeting[m] = intero(obj?.[m])
     }
     return out
   } catch {

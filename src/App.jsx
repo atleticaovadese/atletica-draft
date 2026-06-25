@@ -16,8 +16,8 @@ import Riepilogo from './components/Riepilogo.jsx'
 
 export default function App() {
   const [fase, setFase] = useState('home') // home | draft | risultato | riepilogo
-  const [records, setRecords] = useState(leggiRecords()) // { normale:{M,F,misto}, mondiale:{...} }
-  const [tipo, setTipo] = useState('normale') // 'normale' | 'mondiale'
+  const [records, setRecords] = useState(leggiRecords()) // { meeting:{M,F,misto}, mondiale:{...} }
+  const [tipo, setTipo] = useState('meeting') // 'meeting' | 'mondiale'
   const [modalita, setModalita] = useState('misto') // genere della partita in corso
   const [anno, setAnno] = useState(null) // anno sorteggiato (solo Mondiale)
   const [nuovoRecord, setNuovoRecord] = useState(false)
