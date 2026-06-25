@@ -8,6 +8,7 @@ import CARTE_2021 from './2021.js'
 import CARTE_2020 from './2020.js'
 import CARTE_2019 from './2019.js'
 import CARTE_2018 from './2018.js'
+import CARTE_2017 from './2017.js'
 
 export const ANNI = [
   ...CARTE_2025,
@@ -18,4 +19,5 @@ export const ANNI = [
   ...CARTE_2020,
   ...CARTE_2019,
   ...CARTE_2018,
+  ...CARTE_2017,
 ]
