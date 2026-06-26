@@ -104,6 +104,7 @@ export default function App() {
             totale={piano.length}
             carte={carteAttuali}
             anno={anno}
+            timerSecondi={tipo === 'mondiale' ? CONFIG.TIMER_MONDIALE : 0}
             onScegli={scegliCarta}
           />
         )}

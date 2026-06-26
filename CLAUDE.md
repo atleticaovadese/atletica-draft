@@ -61,6 +61,8 @@ Regole:
 - **Modalità di gioco**: due assi indipendenti scelti nella Home. Tipo = `meeting` (5 eventi,
   atleti di ogni epoca) o `mondiale` (`sorteggiaAnnoMondiale` → un anno; 10 eventi; carte E
   avversari di quell'anno, vedi il param opzionale `anno` di `poolCarte`/`carteDraft`/`simulaEvento`).
+  In Mondiale ogni scelta ha un **timer** (`CONFIG.TIMER_MONDIALE`, default 30s, gestito in
+  `Draft.jsx`): riparte a ogni draft e allo scadere pesca una carta a caso. 0 = nessun timer.
   Genere = `M`/`F`/`misto`. I record (`persistenza.js`) sono separati per tipo×genere:
   `{ meeting:{M,F,misto}, mondiale:{M,F,misto} }`, con migrazione dai formati v1/v2 (e dalla
   vecchia chiave `normale` → `meeting`).

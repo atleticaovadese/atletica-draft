@@ -4,6 +4,7 @@
 export const CONFIG = {
   EVENTI_PER_PARTITA: 5,   // eventi sorteggiati in una partita Normale
   EVENTI_PER_PARTITA_MONDIALE: 10, // eventi sorteggiati in una partita Mondiale (un solo anno)
+  TIMER_MONDIALE: 30,      // secondi per ogni scelta in Mondiale (0 = nessun timer). Scaduto → carta a caso
   CARTE_NEL_DRAFT: 12,     // quante carte vengono mostrate per ogni draft
   DIMENSIONE_BATTERIA: 8,  // numero di atleti in ogni batteria (giocatore + avversari)
   // Punti = DIMENSIONE_BATTERIA - piazzamento + 1  (1° = 8 punti ... 8° = 1 punto)

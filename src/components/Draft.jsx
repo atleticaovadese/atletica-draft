@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import Badge from './Badge.jsx'
 import Carta from './Carta.jsx'
 import BarraProgresso from './BarraProgresso.jsx'
@@ -10,9 +11,36 @@ const SPIEGA_INDIZIO = {
   decennio: 'Indizio: il decennio della prestazione.',
 }
 
-export default function Draft({ evento, genere, indice, totale, carte, anno, onScegli }) {
+export default function Draft({ evento, genere, indice, totale, carte, anno, timerSecondi, onScegli }) {
   // L'indizio è uguale per tutte le carte del draft → calcolo il testo guida una volta.
   const haIndizio = carte.length > 0 && indizioDraft(evento, genere, carte[0]) != null
+
+  // Timer per scelta (solo Mondiale): countdown che riparte a ogni draft; allo
+  // scadere pesca una carta a caso. I ref evitano closure stantie nell'intervallo.
+  const [rimanente, setRimanente] = useState(timerSecondi || 0)
+  const onScegliRef = useRef(onScegli)
+  const carteRef = useRef(carte)
+  onScegliRef.current = onScegli
+  carteRef.current = carte
+
+  useEffect(() => {
+    if (!timerSecondi) return
+    let r = timerSecondi
+    setRimanente(r)
+    const id = setInterval(() => {
+      r -= 1
+      setRimanente(r)
+      if (r <= 0) {
+        clearInterval(id)
+        const c = carteRef.current
+        onScegliRef.current(c[Math.floor(Math.random() * c.length)])
+      }
+    }, 1000)
+    return () => clearInterval(id)
+  }, [indice, timerSecondi])
+
+  const quasiScaduto = timerSecondi > 0 && rimanente <= 5
+
   return (
     <div className="fade-in max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
@@ -37,7 +65,31 @@ export default function Draft({ evento, genere, indice, totale, carte, anno, onS
             </span>
           </p>
         </div>
-        <BarraProgresso indice={indice} totale={totale} />
+        <div className="flex flex-col items-start sm:items-end gap-2">
+          {timerSecondi > 0 && (
+            <div className="w-full sm:w-44">
+              <div
+                className={[
+                  'flex items-center justify-between text-sm font-bold tabular-nums',
+                  quasiScaduto ? 'text-red-400' : 'text-amber-300',
+                ].join(' ')}
+              >
+                <span>⏱ Tempo</span>
+                <span className={quasiScaduto ? 'pop' : ''}>{rimanente}s</span>
+              </div>
+              <div className="mt-1 h-1.5 w-full rounded-full bg-slate-700 overflow-hidden">
+                <div
+                  className={[
+                    'h-full rounded-full transition-all duration-1000 ease-linear',
+                    quasiScaduto ? 'bg-red-500' : 'bg-amber-400',
+                  ].join(' ')}
+                  style={{ width: `${(rimanente / timerSecondi) * 100}%` }}
+                />
+              </div>
+            </div>
+          )}
+          <BarraProgresso indice={indice} totale={totale} />
+        </div>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
