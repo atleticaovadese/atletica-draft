@@ -149,7 +149,7 @@ export default function App() {
                 setCarteAttuali(ordinate.slice(0, 6))
               },
             },
-          ]
+          ].filter((a) => a.id !== 'sesso' || modalita === 'misto')
         })()
       : null
 
