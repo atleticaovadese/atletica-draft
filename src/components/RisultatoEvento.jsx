@@ -1,4 +1,5 @@
 import Badge from './Badge.jsx'
+import Bandiera from './Bandiera.jsx'
 import { formatMisura } from '../logic/gioco.js'
 
 export default function RisultatoEvento({ ris, indice, totale, onAvanti }) {
@@ -52,7 +53,10 @@ export default function RisultatoEvento({ ris, indice, totale, onAvanti }) {
                 <div className={`font-semibold truncate ${mio ? 'text-amber-200' : 'text-slate-200'}`}>
                   {b.atleta} {mio && <span className="text-amber-400">★</span>}
                 </div>
-                <div className="text-xs text-slate-500">{b.nazione} · {b.anno}</div>
+                <div className="text-xs text-slate-500 flex items-center gap-1.5">
+                  <Bandiera nazione={b.nazione} />
+                  <span>{b.nazione} · {b.anno}</span>
+                </div>
               </div>
               <div className={`font-bold tabular-nums ${mio ? 'text-amber-200' : 'text-slate-300'}`}>
                 {formatMisura(evento, b.misura)}
