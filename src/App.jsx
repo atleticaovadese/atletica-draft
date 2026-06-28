@@ -3,6 +3,7 @@ import { CONFIG } from './config.js'
 import {
   sorteggiaEventi,
   eventiPerModalita,
+  eventoGiocabile,
   sorteggiaAnnoMondiale,
   generePerEvento,
   carteDraft,
@@ -20,6 +21,7 @@ export default function App() {
   const [tipo, setTipo] = useState('meeting') // 'meeting' | 'mondiale'
   const [modalita, setModalita] = useState('misto') // genere della partita in corso
   const [anno, setAnno] = useState(null) // anno sorteggiato (solo Mondiale)
+  const [aiutiUsati, setAiutiUsati] = useState({}) // aiuti Meeting già spesi (1 a testa per partita)
   const [nuovoRecord, setNuovoRecord] = useState(false)
 
   const [piano, setPiano] = useState([]) // [{ evento, genere }] x EVENTI_PER_PARTITA
@@ -41,6 +43,7 @@ export default function App() {
     setTipo(tipoPartita)
     setModalita(mod)
     setAnno(annoMondiale)
+    setAiutiUsati({})
     setPiano(nuovoPiano)
     setIndiceDraft(0)
     setScelte([])
@@ -82,6 +85,74 @@ export default function App() {
 
   const totaleFinale = risultati.reduce((s, r) => s + r.punti, 0)
 
+  // Segna l'aiuto come speso ed esegue l'azione (1 uso per aiuto a partita).
+  function usaAiuto(id, azione) {
+    if (aiutiUsati[id]) return
+    azione()
+    setAiutiUsati((u) => ({ ...u, [id]: true }))
+  }
+
+  // Aiuti disponibili nel draft (solo Meeting). Ciascuno agisce sulla scelta corrente.
+  const corrente = piano[indiceDraft]
+  const aiuti =
+    tipo === 'meeting' && corrente && fase === 'draft'
+      ? (() => {
+          const altreGare = eventiPerModalita(modalita).filter(
+            (e) => !piano.some((p) => p.evento.id === e.id),
+          )
+          const altroSesso = corrente.genere === 'M' ? 'F' : 'M'
+          const setPianoCorrente = (patch) =>
+            setPiano(piano.map((p, i) => (i === indiceDraft ? { ...p, ...patch } : p)))
+          return [
+            {
+              id: 'gara',
+              label: 'Cambia gara',
+              icona: '🔀',
+              usato: !!aiutiUsati.gara,
+              disabilitato: altreGare.length === 0,
+              azione: () => {
+                const nuova = sorteggiaEventi(1, altreGare)[0]
+                setPianoCorrente({ evento: nuova })
+                setCarteAttuali(carteDraft(nuova.id, corrente.genere, anno))
+              },
+            },
+            {
+              id: 'sesso',
+              label: 'Cambia sesso',
+              icona: '⚥',
+              usato: !!aiutiUsati.sesso,
+              disabilitato: !eventoGiocabile(corrente.evento.id, altroSesso, anno),
+              azione: () => {
+                setPianoCorrente({ genere: altroSesso })
+                setCarteAttuali(carteDraft(corrente.evento.id, altroSesso, anno))
+              },
+            },
+            {
+              id: 'atleti',
+              label: 'Cambia atleti',
+              icona: '🔄',
+              usato: !!aiutiUsati.atleti,
+              disabilitato: false,
+              azione: () =>
+                setCarteAttuali(carteDraft(corrente.evento.id, corrente.genere, anno)),
+            },
+            {
+              id: 'taglia',
+              label: 'Togli i 6 peggiori',
+              icona: '✂️',
+              usato: !!aiutiUsati.taglia,
+              disabilitato: carteAttuali.length <= 6,
+              azione: () => {
+                const ordinate = [...carteAttuali].sort((a, b) =>
+                  corrente.evento.ordine === 'asc' ? a.misura - b.misura : b.misura - a.misura,
+                )
+                setCarteAttuali(ordinate.slice(0, 6))
+              },
+            },
+          ]
+        })()
+      : null
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 px-4 py-8 sm:py-12">
       <div className="max-w-6xl mx-auto">
@@ -105,6 +176,8 @@ export default function App() {
             carte={carteAttuali}
             anno={anno}
             timerSecondi={tipo === 'mondiale' ? CONFIG.TIMER_MONDIALE : 0}
+            aiuti={aiuti}
+            onAiuto={usaAiuto}
             onScegli={scegliCarta}
           />
         )}

@@ -11,7 +11,7 @@ const SPIEGA_INDIZIO = {
   decennio: 'Indizio: il decennio della prestazione.',
 }
 
-export default function Draft({ evento, genere, indice, totale, carte, anno, timerSecondi, onScegli }) {
+export default function Draft({ evento, genere, indice, totale, carte, anno, timerSecondi, aiuti, onAiuto, onScegli }) {
   // L'indizio è uguale per tutte le carte del draft → calcolo il testo guida una volta.
   const haIndizio = carte.length > 0 && indizioDraft(evento, genere, carte[0]) != null
 
@@ -91,6 +91,34 @@ export default function Draft({ evento, genere, indice, totale, carte, anno, tim
           <BarraProgresso indice={indice} totale={totale} />
         </div>
       </div>
+
+      {aiuti && (
+        <div className="mb-5">
+          <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">Aiuti · 1 uso ciascuno</div>
+          <div className="flex flex-wrap gap-2">
+            {aiuti.map((a) => {
+              const spento = a.usato || a.disabilitato
+              return (
+                <button
+                  key={a.id}
+                  onClick={() => onAiuto(a.id, a.azione)}
+                  disabled={spento}
+                  title={a.usato ? 'Aiuto già usato' : a.disabilitato ? 'Non disponibile ora' : a.label}
+                  className={[
+                    'flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-semibold transition',
+                    spento
+                      ? 'border-slate-800 bg-slate-800/40 text-slate-600 cursor-not-allowed line-through'
+                      : 'border-slate-600 bg-slate-800 text-slate-200 hover:border-cyan-400 hover:text-white',
+                  ].join(' ')}
+                >
+                  <span className="not-italic no-underline">{a.icona}</span>
+                  {a.label}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {carte.map((carta) => (
