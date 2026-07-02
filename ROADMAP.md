@@ -25,11 +25,11 @@ Claude Code. Le fasi base del brief sono completate.
 
 Obiettivo: tutti gli eventi del programma, anno per anno dal 2025 indietro. Stato:
 
-- [x] **2025–2006 COMPLETI** — tutti i 20 eventi (M+F) per ogni stagione, ~1800–2000 carte/anno
-- [ ] 2005, 2004, … a ritroso (i dati WA sono ricchi dal ~2001, più radi prima)
+- [x] **2025–2005 COMPLETI** — tutti i 20 eventi (M+F) per ogni stagione, ~1800–2000 carte/anno
+- [ ] 2004, 2003, … a ritroso (i dati WA sono ricchi dal ~2001, più radi prima)
 
-Carte totali attuali: **~39.400** (BASE 308 + shard 2025→2006). Procedura in `CLAUDE.md`.
-Mondiale: 20 anni sorteggiabili (2006–2025).
+Carte totali attuali: **~41.400** (BASE 308 + shard 2025→2005). Procedura in `CLAUDE.md`.
+Mondiale: 21 anni sorteggiabili (2005–2025).
 NB: raccogliere gli anni UNO ALLA VOLTA (agenti sequenziali) — fetch paralleli su
 più anni fanno scattare il 403 (rate-limit) di World Athletics.
 Suggerimento: gli anni si possono raccogliere in parallelo con sub-agenti (uno per anno),

@@ -20,6 +20,7 @@ import CARTE_2009 from './2009.js'
 import CARTE_2008 from './2008.js'
 import CARTE_2007 from './2007.js'
 import CARTE_2006 from './2006.js'
+import CARTE_2005 from './2005.js'
 
 export const ANNI = [
   ...CARTE_2025,
@@ -42,4 +43,5 @@ export const ANNI = [
   ...CARTE_2008,
   ...CARTE_2007,
   ...CARTE_2006,
+  ...CARTE_2005,
 ]
