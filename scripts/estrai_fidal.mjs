@@ -33,17 +33,27 @@ function normalizzaNome(raw) {
   return full.join(' ')
 }
 
-function parseTabella(html) {
+// "03" → 2003, "85" → 1985: chi è in graduatoria ha almeno ~12 anni.
+function annoNascita(yy, stagione) {
+  const n = parseInt(yy, 10)
+  if (!Number.isFinite(n)) return ''
+  const y2000 = 2000 + n
+  return y2000 <= stagione - 12 ? y2000 : 1900 + n
+}
+
+function parseTabella(html, stagione) {
   const righe = []
   for (const tr of html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)) {
     const r = tr[1]
     const mMis = r.match(/<td[^>]*><b>\s*([^<]+?)\s*<\/b>/)
     const mAtl = r.match(/href="[^"]*\/atleta\/[^"]*"[^>]*>([^<]+)</)
+    const mNas = r.match(/<abbr[^>]*>\s*(\d{2})/)
     const mSoc = r.match(/href="[^"]*\/societa\/[^"]*\/([A-Z]{2})[A-Z0-9]*"[^>]*>([^<]+)</)
     if (!mMis || !mAtl || !mSoc) continue
     righe.push({
       misura: mMis[1].trim(),
       atleta: normalizzaNome(decodeEnt(mAtl[1])),
+      nascita: mNas ? annoNascita(mNas[1], stagione) : '',
       provincia: mSoc[1],
       societa: decodeEnt(mSoc[2]).trim().replace(/\|/g, '/').replace(/`/g, "'"),
     })
@@ -63,7 +73,7 @@ for (const [evento, codM, codF] of GARE) {
       try {
         const res = await fetch(url, { headers: { 'User-Agent': UA } })
         if (res.status === 403) { console.error(`${evento}/${genere}: 403, attendo 60s...`); await dormi(60000); continue }
-        righe = parseTabella(await res.text())
+        righe = parseTabella(await res.text(), parseInt(anno, 10))
         break
       } catch (e) { console.error(`${evento}/${genere}: ${e.message}, riprovo...`); await dormi(5000) }
     }
@@ -71,7 +81,7 @@ for (const [evento, codM, codF] of GARE) {
     const visti = new Set()
     const top = righe.filter(r => !visti.has(r.atleta) && visti.add(r.atleta)).slice(0, TOP)
     console.log(`${evento}/${genere}: ${top.length} atleti`)
-    const testo = top.map(r => `${r.atleta}|${r.societa}|${r.provincia}|${r.misura}`).join('\n')
+    const testo = top.map(r => `${r.atleta}|${r.societa}|${r.provincia}|${r.nascita}|${r.misura}`).join('\n')
     blocchi.push(`  ...righeFidal('${evento}', '${genere}', ${anno}, '${REG}', \`\n${testo}\n\`),`)
     await dormi(1500)
   }

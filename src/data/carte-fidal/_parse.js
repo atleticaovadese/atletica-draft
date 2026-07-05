@@ -1,5 +1,6 @@
 // Parser per gli shard FIDAL (graduatorie regionali).
-// Ogni riga: "Nome Cognome|SOCIETÀ|PROV|misura"
+// Ogni riga: "Nome Cognome|SOCIETÀ|PROV|NASCITA|misura"
+//   (NASCITA = anno di nascita a 4 cifre; può mancare → riga a 4 campi)
 //   misura: secondi (10.27), m:ss.xx (3:57.12), h:mm:ss (1:18:30) o metri (7.45)
 // L'id include la regione per non collidere mai con le carte internazionali.
 
@@ -29,7 +30,11 @@ export function righeFidal(evento, genere, anno, regione, blocco) {
     .map((r) => r.trim())
     .filter((r) => r && r.includes('|'))
     .map((r) => {
-      const [atleta, societa, provincia, misura] = r.split('|').map((x) => x.trim())
+      const campi = r.split('|').map((x) => x.trim())
+      // 5 campi = con anno di nascita; 4 campi = formato precedente senza nascita
+      const [atleta, societa, provincia] = campi
+      const nascita = campi.length >= 5 ? parseInt(campi[3], 10) || null : null
+      const misura = campi[campi.length - 1]
       return {
         id: `${slug(atleta)}-${anno}-${evento}-${genere}-${regione}`,
         atleta,
@@ -39,6 +44,7 @@ export function righeFidal(evento, genere, anno, regione, blocco) {
         misura: parseMisura(misura),
         societa,
         provincia,
+        nascita,
         regione,
       }
     })
