@@ -11,7 +11,7 @@ const SPIEGA_INDIZIO = {
   decennio: 'Indizio: il decennio della prestazione.',
 }
 
-export default function Draft({ evento, genere, indice, totale, carte, anno, timerSecondi, aiuti, onAiuto, onScegli }) {
+export default function Draft({ evento, genere, indice, totale, carte, badge, timerSecondi, aiuti, onAiuto, onScegli }) {
   // L'indizio è uguale per tutte le carte del draft → calcolo il testo guida una volta.
   const haIndizio = carte.length > 0 && indizioDraft(evento, genere, carte[0]) != null
 
@@ -47,8 +47,8 @@ export default function Draft({ evento, genere, indice, totale, carte, anno, tim
         <div>
           <div className="text-cyan-400 text-sm font-semibold flex items-center gap-2">
             <span>Draft {indice + 1} / {totale}</span>
-            {anno && (
-              <Badge className="bg-amber-400/20 text-amber-300">🌍 Mondiale {anno}</Badge>
+            {badge && (
+              <Badge className="bg-amber-400/20 text-amber-300">{badge}</Badge>
             )}
           </div>
           <h2 className="text-3xl font-black text-white flex items-center gap-3">

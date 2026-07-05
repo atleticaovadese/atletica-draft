@@ -45,10 +45,16 @@ export default function Carta({ carta, evento, onClick, selezionata, posizione, 
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <div className="font-bold text-slate-100 leading-tight truncate">{carta.atleta}</div>
-          <div className="text-xs text-slate-400 mt-0.5 flex items-center gap-1.5">
-            <Bandiera nazione={carta.nazione} />
-            <span>{carta.nazione} · {carta.anno}</span>
-          </div>
+          {carta.societa ? (
+            <div className="text-xs text-slate-400 mt-0.5 truncate" title={`${carta.societa} (${carta.provincia})`}>
+              {carta.societa} ({carta.provincia}) · {carta.anno}
+            </div>
+          ) : (
+            <div className="text-xs text-slate-400 mt-0.5 flex items-center gap-1.5">
+              <Bandiera nazione={carta.nazione} />
+              <span>{carta.nazione} · {carta.anno}</span>
+            </div>
+          )}
         </div>
         <Badge className={carta.genere === 'M' ? 'bg-sky-500/20 text-sky-300' : 'bg-pink-500/20 text-pink-300'}>
           {carta.genere}

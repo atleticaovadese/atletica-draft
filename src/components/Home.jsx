@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { CONFIG } from '../config.js'
+import { regioniDisponibili } from '../logic/gioco.js'
+import { NOMI_REGIONI } from '../data/carte-fidal/index.js'
 
 const TIPI = [
   { id: 'meeting', label: 'Meeting' },
   { id: 'mondiale', label: 'Mondiale' },
+  { id: 'regionali', label: 'Regionali' },
 ]
 const GENERI = [
   { id: 'M', label: 'Uomini' },
@@ -36,10 +39,16 @@ export default function Home({ records, onGioca }) {
   const [genere, setGenere] = useState('misto')
   const [mostraQr, setMostraQr] = useState(false)
 
+  const regioni = regioniDisponibili(genere)
+  const [regione, setRegione] = useState(regioni[0] ?? null)
+  // se il cambio di genere rende la regione scelta non più valida, riallinea
+  const regioneValida = regioni.includes(regione) ? regione : (regioni[0] ?? null)
+
   const urlApp = typeof window !== 'undefined' ? window.location.origin : ''
   const record = records?.[tipo]?.[genere] ?? 0
   const etichettaTipo = TIPI.find((t) => t.id === tipo)?.label ?? ''
   const etichettaGenere = GENERI.find((g) => g.id === genere)?.label ?? ''
+  const giocaDisabilitato = tipo === 'regionali' && !regioneValida
 
   return (
     <div className="fade-in max-w-xl mx-auto text-center pt-10">
@@ -66,9 +75,26 @@ export default function Home({ records, onGioca }) {
         <p className="mt-2 text-xs text-slate-500 h-4">
           {tipo === 'mondiale'
             ? `Un anno a caso · ${CONFIG.EVENTI_PER_PARTITA_MONDIALE} discipline · tutte le carte di quell'anno`
-            : `${CONFIG.EVENTI_PER_PARTITA} discipline · atleti di ogni epoca`}
+            : tipo === 'regionali'
+              ? `Graduatorie FIDAL assolute · un anno a caso · ${CONFIG.EVENTI_PER_PARTITA_MONDIALE} discipline · timer e aiuti`
+              : `${CONFIG.EVENTI_PER_PARTITA} discipline · atleti di ogni epoca`}
         </p>
       </div>
+
+      {tipo === 'regionali' && (
+        <div className="mt-5">
+          <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">Regione</div>
+          <select
+            value={regioneValida ?? ''}
+            onChange={(e) => setRegione(e.target.value)}
+            className="rounded-lg bg-slate-800 border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200"
+          >
+            {regioni.map((r) => (
+              <option key={r} value={r}>{NOMI_REGIONI[r] ?? r}</option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div className="mt-5">
         <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">Modalità</div>
@@ -76,8 +102,9 @@ export default function Home({ records, onGioca }) {
       </div>
 
       <button
-        onClick={() => onGioca(tipo, genere)}
-        className="mt-8 w-full sm:w-auto px-12 py-4 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-900 text-lg font-black shadow-xl hover:scale-105 transition"
+        onClick={() => onGioca(tipo, genere, regioneValida)}
+        disabled={giocaDisabilitato}
+        className="mt-8 w-full sm:w-auto px-12 py-4 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-900 text-lg font-black shadow-xl hover:scale-105 transition disabled:opacity-40 disabled:hover:scale-100"
       >
         ▶ Gioca
       </button>

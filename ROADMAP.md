@@ -30,6 +30,15 @@ Obiettivo: tutti gli eventi del programma, anno per anno dal 2025 indietro. Stat
 
 Carte totali attuali: **~43.400** (BASE 308 + shard 2025→2004). Procedura in `CLAUDE.md`.
 Mondiale: 22 anni sorteggiabili (2004–2025).
+
+## Regionali (dataset FIDAL, in corso)
+
+- [x] Modalità **Regionali**: come Mondiale (anno sorteggiato, 10 discipline, timer) + aiuti;
+  regione selezionabile; carte con società (provincia) al posto della bandiera
+- [x] **Piemonte 2025** — Assoluti outdoor, top 25 per evento/genere (~900 carte, 18 eventi giocabili)
+- [ ] Altri anni Piemonte (2024, 2023, … il form FIDAL arriva al 2005)
+- [ ] Altre regioni (basta `scripts/estrai_fidal.mjs` + 1 riga in `carte-fidal/index.js`)
+- [ ] Loghi delle società (idea per dopo)
 NB: raccogliere gli anni UNO ALLA VOLTA (agenti sequenziali) — fetch paralleli su
 più anni fanno scattare il 403 (rate-limit) di World Athletics.
 Suggerimento: gli anni si possono raccogliere in parallelo con sub-agenti (uno per anno),

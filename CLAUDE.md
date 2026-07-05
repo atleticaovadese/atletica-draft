@@ -59,13 +59,21 @@ Regole:
 - **Tutte le costanti regolabili stanno in `config.js`.** Se aggiungi un numero "magico"
   (dimensione batteria, carte nel draft, formula punti...), mettilo lì.
 - **Modalità di gioco**: due assi indipendenti scelti nella Home. Tipo = `meeting` (5 eventi,
-  atleti di ogni epoca) o `mondiale` (`sorteggiaAnnoMondiale` → un anno; 10 eventi; carte E
-  avversari di quell'anno, vedi il param opzionale `anno` di `poolCarte`/`carteDraft`/`simulaEvento`).
-  In Mondiale ogni scelta ha un **timer** (`CONFIG.TIMER_MONDIALE`, default 30s, gestito in
-  `Draft.jsx`): riparte a ogni draft e allo scadere pesca una carta a caso. 0 = nessun timer.
+  atleti di ogni epoca, aiuti), `mondiale` (`sorteggiaAnnoMondiale` → un anno; 10 eventi; carte E
+  avversari di quell'anno; timer) o `regionali` (come mondiale ma sul dataset FIDAL della regione
+  scelta nella Home, con timer E aiuti; vedi i param opzionali `anno`/`regione` di
+  `poolCarte`/`carteDraft`/`simulaEvento`/`eventiPerModalita`).
+  Il **timer** (`CONFIG.TIMER_MONDIALE`, default 30s, gestito in `Draft.jsx`) riparte a ogni
+  draft e allo scadere pesca una carta a caso. 0 = nessun timer.
   Genere = `M`/`F`/`misto`. I record (`persistenza.js`) sono separati per tipo×genere:
-  `{ meeting:{M,F,misto}, mondiale:{M,F,misto} }`, con migrazione dai formati v1/v2 (e dalla
+  `{ meeting, mondiale, regionali }×{M,F,misto}`, con migrazione dai formati v1/v2 (e dalla
   vecchia chiave `normale` → `meeting`).
+- **Dati FIDAL (Regionali)**: shard in `data/carte-fidal/<anno>-<REG>.js` — top 25 Assoluti
+  outdoor per evento/genere; la carta ha `societa`, `provincia`, `regione` (mostrati al posto
+  della bandiera). Niente maratona (è su strada); marcia = 10km M / 5km F in pista.
+  Estrazione automatica: `node scripts/estrai_fidal.mjs <anno> <REG> src/data/carte-fidal/<anno>-<REG>.js`
+  (interroga fidal.it/graduatorie.php in sequenza, con pause), poi registra lo shard in
+  `carte-fidal/index.js`. Le carte FIDAL restano SEPARATE da `CARTE` (mai mescolate nei pool).
 - **Indizi nel draft** (`CONFIG.INDIZI_DRAFT`): la misura resta sempre nascosta, ma le carte
   possono mostrare un indizio — `'off'`, `'decennio'`, o `'fascia'` (élite/buono/outsider
   calcolata sul pool dell'evento). La logica è in `indizioDraft`/`fasciaCarta` (`logic/gioco.js`,

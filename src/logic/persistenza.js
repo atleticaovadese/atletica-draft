@@ -1,14 +1,15 @@
 // =========================================================================
 // PERSISTENZA — record migliore su localStorage, separato per tipo e modalità
-// Forma salvata: { meeting: {M,F,misto}, mondiale: {M,F,misto} }
+// Forma salvata: { meeting: {M,F,misto}, mondiale: {M,F,misto}, regionali: {M,F,misto} }
 // =========================================================================
 const RECORD_KEY = 'atleticaDraft.record'
 const MODI = ['M', 'F', 'misto']
-const TIPI = ['meeting', 'mondiale']
+const TIPI = ['meeting', 'mondiale', 'regionali']
 
 const vuoto = () => ({
   meeting: { M: 0, F: 0, misto: 0 },
   mondiale: { M: 0, F: 0, misto: 0 },
+  regionali: { M: 0, F: 0, misto: 0 },
 })
 
 const intero = (v) => {
@@ -33,7 +34,7 @@ export function leggiRecords() {
     const obj = JSON.parse(t)
     const out = vuoto()
     if (obj && (obj.meeting || obj.normale || obj.mondiale)) {
-      const src = { meeting: obj.meeting ?? obj.normale, mondiale: obj.mondiale }
+      const src = { meeting: obj.meeting ?? obj.normale, mondiale: obj.mondiale, regionali: obj.regionali }
       for (const tipo of TIPI) for (const m of MODI) out[tipo][m] = intero(src?.[tipo]?.[m])
     } else {
       for (const m of MODI) out.meeting[m] = intero(obj?.[m])

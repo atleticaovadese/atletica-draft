@@ -5,10 +5,12 @@ import {
   eventiPerModalita,
   eventoGiocabile,
   sorteggiaAnnoMondiale,
+  sorteggiaAnnoRegionale,
   generePerEvento,
   carteDraft,
   simulaEvento,
 } from './logic/gioco.js'
+import { NOMI_REGIONI } from './data/carte-fidal/index.js'
 import { leggiRecords, salvaRecords } from './logic/persistenza.js'
 import Home from './components/Home.jsx'
 import Draft from './components/Draft.jsx'
@@ -18,9 +20,10 @@ import Riepilogo from './components/Riepilogo.jsx'
 export default function App() {
   const [fase, setFase] = useState('home') // home | draft | risultato | riepilogo
   const [records, setRecords] = useState(leggiRecords()) // { meeting:{M,F,misto}, mondiale:{...} }
-  const [tipo, setTipo] = useState('meeting') // 'meeting' | 'mondiale'
+  const [tipo, setTipo] = useState('meeting') // 'meeting' | 'mondiale' | 'regionali'
   const [modalita, setModalita] = useState('misto') // genere della partita in corso
-  const [anno, setAnno] = useState(null) // anno sorteggiato (solo Mondiale)
+  const [anno, setAnno] = useState(null) // anno sorteggiato (Mondiale/Regionali)
+  const [regione, setRegione] = useState(null) // regione FIDAL (solo Regionali)
   const [aiutiUsati, setAiutiUsati] = useState({}) // aiuti Meeting già spesi (1 a testa per partita)
   const [nuovoRecord, setNuovoRecord] = useState(false)
 
@@ -31,25 +34,33 @@ export default function App() {
   const [risultati, setRisultati] = useState([])
   const [indiceRis, setIndiceRis] = useState(0)
 
-  function iniziaPartita(tipoPartita, mod) {
-    // In Mondiale: un anno sorteggiato + 10 eventi, tutte le carte di quell'anno.
-    const annoMondiale = tipoPartita === 'mondiale' ? sorteggiaAnnoMondiale(mod) : null
+  function iniziaPartita(tipoPartita, mod, regioneSel) {
+    // Mondiale: anno sorteggiato + 10 eventi, carte di quell'anno.
+    // Regionali: come Mondiale ma sul dataset FIDAL della regione scelta.
+    const reg = tipoPartita === 'regionali' ? regioneSel : null
+    const annoSorteggiato =
+      tipoPartita === 'mondiale'
+        ? sorteggiaAnnoMondiale(mod)
+        : tipoPartita === 'regionali'
+          ? sorteggiaAnnoRegionale(mod, reg)
+          : null
     const maxEventi =
-      tipoPartita === 'mondiale' ? CONFIG.EVENTI_PER_PARTITA_MONDIALE : CONFIG.EVENTI_PER_PARTITA
-    const disponibili = eventiPerModalita(mod, annoMondiale)
+      tipoPartita === 'meeting' ? CONFIG.EVENTI_PER_PARTITA : CONFIG.EVENTI_PER_PARTITA_MONDIALE
+    const disponibili = eventiPerModalita(mod, annoSorteggiato, reg)
     const n = Math.min(maxEventi, disponibili.length)
     const eventi = sorteggiaEventi(n, disponibili)
     const nuovoPiano = eventi.map((ev) => ({ evento: ev, genere: generePerEvento(mod) }))
     setTipo(tipoPartita)
     setModalita(mod)
-    setAnno(annoMondiale)
+    setAnno(annoSorteggiato)
+    setRegione(reg)
     setAiutiUsati({})
     setPiano(nuovoPiano)
     setIndiceDraft(0)
     setScelte([])
     setRisultati([])
     setNuovoRecord(false)
-    setCarteAttuali(carteDraft(nuovoPiano[0].evento.id, nuovoPiano[0].genere, annoMondiale))
+    setCarteAttuali(carteDraft(nuovoPiano[0].evento.id, nuovoPiano[0].genere, annoSorteggiato, reg))
     setFase('draft')
   }
 
@@ -60,10 +71,10 @@ export default function App() {
     if (prossimo < piano.length) {
       setScelte(nuoveScelte)
       setIndiceDraft(prossimo)
-      setCarteAttuali(carteDraft(piano[prossimo].evento.id, piano[prossimo].genere, anno))
+      setCarteAttuali(carteDraft(piano[prossimo].evento.id, piano[prossimo].genere, anno, regione))
     } else {
-      // Draft completato → simula tutti gli eventi (avversari dell'anno in Mondiale)
-      const ris = piano.map((p, i) => simulaEvento(p.evento, p.genere, nuoveScelte[i], anno))
+      // Draft completato → simula tutti gli eventi (avversari dallo stesso pool)
+      const ris = piano.map((p, i) => simulaEvento(p.evento, p.genere, nuoveScelte[i], anno, regione))
       const totale = ris.reduce((s, r) => s + r.punti, 0)
       setScelte(nuoveScelte)
       setRisultati(ris)
@@ -92,12 +103,12 @@ export default function App() {
     setAiutiUsati((u) => ({ ...u, [id]: true }))
   }
 
-  // Aiuti disponibili nel draft (solo Meeting). Ciascuno agisce sulla scelta corrente.
+  // Aiuti disponibili nel draft (Meeting e Regionali). Ciascuno agisce sulla scelta corrente.
   const corrente = piano[indiceDraft]
   const aiuti =
-    tipo === 'meeting' && corrente && fase === 'draft'
+    (tipo === 'meeting' || tipo === 'regionali') && corrente && fase === 'draft'
       ? (() => {
-          const altreGare = eventiPerModalita(modalita).filter(
+          const altreGare = eventiPerModalita(modalita, anno, regione).filter(
             (e) => !piano.some((p) => p.evento.id === e.id),
           )
           const altroSesso = corrente.genere === 'M' ? 'F' : 'M'
@@ -113,7 +124,7 @@ export default function App() {
               azione: () => {
                 const nuova = sorteggiaEventi(1, altreGare)[0]
                 setPianoCorrente({ evento: nuova })
-                setCarteAttuali(carteDraft(nuova.id, corrente.genere, anno))
+                setCarteAttuali(carteDraft(nuova.id, corrente.genere, anno, regione))
               },
             },
             {
@@ -121,10 +132,10 @@ export default function App() {
               label: 'Cambia sesso',
               icona: '⚥',
               usato: !!aiutiUsati.sesso,
-              disabilitato: !eventoGiocabile(corrente.evento.id, altroSesso, anno),
+              disabilitato: !eventoGiocabile(corrente.evento.id, altroSesso, anno, regione),
               azione: () => {
                 setPianoCorrente({ genere: altroSesso })
-                setCarteAttuali(carteDraft(corrente.evento.id, altroSesso, anno))
+                setCarteAttuali(carteDraft(corrente.evento.id, altroSesso, anno, regione))
               },
             },
             {
@@ -134,7 +145,7 @@ export default function App() {
               usato: !!aiutiUsati.atleti,
               disabilitato: false,
               azione: () =>
-                setCarteAttuali(carteDraft(corrente.evento.id, corrente.genere, anno)),
+                setCarteAttuali(carteDraft(corrente.evento.id, corrente.genere, anno, regione)),
             },
             {
               id: 'taglia',
@@ -152,6 +163,14 @@ export default function App() {
           ].filter((a) => a.id !== 'sesso' || modalita === 'misto')
         })()
       : null
+
+  // Etichetta della partita speciale, mostrata come badge in Draft e Riepilogo.
+  const badgePartita =
+    tipo === 'mondiale' && anno
+      ? `🌍 Mondiale ${anno}`
+      : tipo === 'regionali' && anno
+        ? `🏟️ Regionali ${NOMI_REGIONI[regione] ?? regione} ${anno}`
+        : null
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 px-4 py-8 sm:py-12">
@@ -174,8 +193,8 @@ export default function App() {
             indice={indiceDraft}
             totale={piano.length}
             carte={carteAttuali}
-            anno={anno}
-            timerSecondi={tipo === 'mondiale' ? CONFIG.TIMER_MONDIALE : 0}
+            badge={badgePartita}
+            timerSecondi={tipo === 'mondiale' || tipo === 'regionali' ? CONFIG.TIMER_MONDIALE : 0}
             aiuti={aiuti}
             onAiuto={usaAiuto}
             onScegli={scegliCarta}
@@ -196,7 +215,7 @@ export default function App() {
             risultati={risultati}
             totale={totaleFinale}
             record={records[tipo]?.[modalita] || 0}
-            anno={anno}
+            badge={badgePartita}
             nuovoRecord={nuovoRecord}
             onRigioca={() => setFase('home')}
           />
