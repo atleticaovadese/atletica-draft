@@ -44,14 +44,19 @@ export default function Carta({ carta, evento, onClick, selezionata, posizione, 
 
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <div className="font-bold text-slate-100 leading-tight truncate">{carta.atleta}</div>
+          <div className="font-bold text-slate-100 leading-tight break-words">{carta.atleta}</div>
           {carta.societa ? (
-            <div
-              className="text-xs text-slate-400 mt-0.5 truncate"
-              title={`${carta.societa} (${carta.provincia})${carta.nascita ? ` · classe ${carta.nascita}` : ''}`}
-            >
-              {carta.societa} ({carta.provincia}) · {carta.nascita ? `classe ${carta.nascita}` : carta.anno}
-            </div>
+            <>
+              {carta.nascita && (
+                <div className="text-xs font-semibold text-slate-300 mt-0.5">classe {carta.nascita}</div>
+              )}
+              <div
+                className="text-xs text-slate-400 mt-0.5 truncate"
+                title={`${carta.societa} (${carta.provincia})`}
+              >
+                {carta.societa} ({carta.provincia})
+              </div>
+            </>
           ) : (
             <div className="text-xs text-slate-400 mt-0.5 flex items-center gap-1.5">
               <Bandiera nazione={carta.nazione} />
