@@ -2,10 +2,12 @@
 // crea carte-fidal/<anno>-<REG>.js e importalo qui sotto.
 import PIE_2025 from './2025-PIE.js'
 import PIE_2024 from './2024-PIE.js'
+import LIG_2025 from './2025-LIG.js'
 
 export const CARTE_FIDAL = [
   ...PIE_2025,
   ...PIE_2024,
+  ...LIG_2025,
 ]
 
 // Nomi visualizzati delle regioni (codici FIDAL).

@@ -37,7 +37,9 @@ Mondiale: 22 anni sorteggiabili (2004–2025).
   regione selezionabile; carte con società (provincia) al posto della bandiera
 - [x] **Piemonte 2025** — Assoluti outdoor, top 25 per evento/genere (~900 carte, 18 eventi giocabili)
 - [x] **Piemonte 2024** — ~900 carte, 19 eventi giocabili; sorteggio ora tra 2024 e 2025
-- [ ] Altri anni Piemonte (2023, 2022, … il form FIDAL arriva al 2005)
+- [x] **Liguria 2025** — ~670 carte, 13–15 eventi giocabili (regione più piccola: siepi,
+  marcia, ostacoli e 10000 sotto soglia — esclusi automaticamente)
+- [ ] Altri anni Piemonte/Liguria (2023, 2022, … il form FIDAL arriva al 2005)
 - [ ] Altre regioni (basta `scripts/estrai_fidal.mjs` + 1 riga in `carte-fidal/index.js`)
 - [ ] Loghi delle società (idea per dopo)
 NB: raccogliere gli anni UNO ALLA VOLTA (agenti sequenziali) — fetch paralleli su
